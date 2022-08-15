@@ -1,4 +1,4 @@
-@DoktorViewResult
+@Smoke_Test
 Feature: US13 TC0001
 
   Background: Doktor Appontments sayfasina gelir
@@ -8,6 +8,7 @@ Feature: US13 TC0001
     And doktor username ve Password bilgileri ile giris yapar
     And doktor kendi sayfasina giris yaptigini gorur
     And doktor Appointments sayfasina ilerler
+
 
   Scenario: TC0001 Doktor test result gorebilmeli
     And doktor acilan sayfanin Appointments sayfasi oldugunu gorur

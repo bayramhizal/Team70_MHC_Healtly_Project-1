@@ -9,12 +9,14 @@ Feature: User Story 012 Doktor test Isteyebilmeli
     And doktor kendi sayfasina giris yaptigini gorur
     And doktor Appointments sayfasina ilerler
 
+  @Smoke_Test
   Scenario: TC001 Doktor test isteyebilmeli
     And doktor acilan sayfanin Appointments sayfasi oldugunu gorur
     And doktor Appointments sayfasinda "ahm" isimli hastasini gorur
     And doktor test talep edecegi hastanin yaninda bulunan Edit butonunu gorur ve tiklar
     And doktor Request A Test yazan yesil kutucugu gorur ve tiklar
     And doktor acilan sayfanin Test Items sayfasi oldugunu gorur
+
 
   Scenario: TC002 Doktor Glucose, Urea, Creatinine, Sodium,Potassium, Total protein, Albumin ve Hemoglobin test seceneklerini gorur
     And doktor test talep edecegi hastanin yaninda bulunan Edit butonunu gorur ve tiklar

@@ -1,4 +1,4 @@
-@adem2
+@Smoke_Test
 Feature: US_04 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır.
 
   Background:Tekrar eden methodlar
