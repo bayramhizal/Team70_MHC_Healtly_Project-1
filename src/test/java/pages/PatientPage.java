@@ -31,8 +31,8 @@ public class PatientPage {
 
     @FindBy(xpath = "//*[@id='email']")
     public WebElement email;
-    @FindBy(xpath = "//*[@id='appointment']/div[1]/div/div")
-    public WebElement make_an_appointment_text;
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
+    public WebElement TestCase1Assertion;
 
     @FindBy(xpath = "//input[@placeholder='Your username']")
     public WebElement userName;
@@ -55,11 +55,31 @@ public class PatientPage {
     @FindBy(xpath = "//a[@id='login-item']")
     public WebElement ikinciSignIn;
 
-    @FindBy(xpath = "//li[@id='account-menu']")
-    public WebElement ilkAccountMenuSignIn;
 
-    @FindBy(xpath = "//button[@id='register-submit']")
+
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement sendRequestSubmit;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement firstnameInvalidText;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    public WebElement lastnameInvalidText;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
+    public WebElement ssnInvalidText;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
+    public WebElement emailInvalidText;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement phoneInvalidText;
+
+    @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
+    public WebElement accountMenuSigninOncesi;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement SifreSonrasiSignin;
 
 
 
