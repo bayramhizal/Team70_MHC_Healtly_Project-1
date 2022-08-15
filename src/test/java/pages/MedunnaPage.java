@@ -124,4 +124,47 @@ public class MedunnaPage {
 
     @FindBy (xpath = "//*[@style='background-color: rgb(0, 255, 0);']")
     public WebElement passwordStrengtBesCizgi; // A1*sdfgh
+
+
+
+
+
+
+
+
+
+    /////
+    @FindBy(xpath = "//label[@for=\"username\"]")
+    public WebElement usernameButton;
+
+    @FindBy(xpath = "//label[@for=\"password\"]")
+    public WebElement passwordButton;
+
+    @FindBy(xpath = "//span[text()='Remember me']")
+    public WebElement rememberMeButton;
+
+    @FindBy(xpath = "//input[@name='rememberMe']")
+    public WebElement rememberMeClickButton;
+
+    @FindBy(xpath = "//a[@href=\"/account/reset/request\"]")
+    public WebElement didYouForgetPasswordButton;
+
+    @FindBy(xpath = "(//a[@href='/account/register'])[2]")
+    public WebElement registerAnewAccount;
+
+    @FindBy(xpath = "//span[text()=\"You don't have an account yet?\"]")
+    public WebElement youDontHaveAaccountButton;
+
+    @FindBy(xpath = "(//button[@type=\"button\"])[3]")
+    public WebElement cancelButton;
+
+    @FindBy(xpath = "//span[text()='Reset your password']")
+    public WebElement resetYourPasswordButton;
+
+    @FindBy(xpath = "//h1")
+    public WebElement wellcomeToMedunna;
+
+    @FindBy(xpath = "(//div[@class='alert alert-warning fade show'])[2]")
+    public WebElement youDontRegisterButton;
+
 }
