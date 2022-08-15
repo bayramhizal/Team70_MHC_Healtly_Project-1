@@ -88,7 +88,8 @@ public class US09_UiStepDefinitions {
     @Then("SSN i girilen hastanin kayit bilgileri dogrulanir")
     public void ssnIGirilenHastaninKayitBilgileriDogrulanir() {
         StaffPage page=new StaffPage();
-        String expectedSsn="415-15-2256";
+        String expectedSsn="865-12-6357";
+        ReusableMethods.waitFor(2);
         Assert.assertTrue(page.ssnPatient.getText().contains(expectedSsn));
         Assert.assertEquals(expectedSsn,page.ssnPatient.getText());
 
