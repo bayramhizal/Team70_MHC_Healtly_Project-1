@@ -1,5 +1,5 @@
 
-@sm
+@Smoke_Test @E2E
 Feature: Kayit olmak için email and username bilgileri girilebilmelidir.
 
   Background: Register sayfasina gidis

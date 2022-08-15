@@ -1,4 +1,4 @@
-@api09
+@E2E
 Feature: US09 Staff hasta bilgilerini gorebilmeli, duzenleyebilmeli ve silebilmelidir
 
   Scenario: TC04 Admin, API kullanarak tum hasta bilgilerini dogrulamalidir.
