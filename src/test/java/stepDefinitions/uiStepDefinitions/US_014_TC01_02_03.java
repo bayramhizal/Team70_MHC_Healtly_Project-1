@@ -25,20 +25,6 @@ public class US_014_TC01_02_03 {
         doktorPage.myInPatientsEditButton.click();
     }
 
-//  @Then("doktor inMyInpatients sayfasinda {string} bilgilerini görebilir")
-//  public void doktorInMyInpatientsSayfasindaBilgileriniGorebilir() {
-//      Driver.getDriver().navigate().back();
-//      waitFor(1);
-//      Assert.assertTrue(doktorPage.myInPatientsId.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsStartDate.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsEndDate.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsStatus.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsDescription.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsCreatedDate.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsRoom.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsAppointment.isDisplayed());
-//      Assert.assertTrue(doktorPage.myInPatientsPatient.isDisplayed());
-//  }
 
 
     @Then("doktor tarafindan {string} durumu guncellenebilmeli")
