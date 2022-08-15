@@ -44,6 +44,7 @@ public class US07_08 {
     public void hasta_sag_ust_kosedeki_my_pages_paients_butonuna_tiklar() {
         patientpage.myPagePatient.click();
 
+
     }
     @Then("Hasta Make an Appointment sekmesini tiklar")
     public void hasta_make_an_appointment_sekmesini_tiklar() {
