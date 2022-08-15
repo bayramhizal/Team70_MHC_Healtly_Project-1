@@ -1,0 +1,215 @@
+Index: src/test/java/stepDefinitions/uiStepDefinitions/US01_02.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/stepDefinitions/uiStepDefinitions/US01_02.java b/src/test/java/stepDefinitions/uiStepDefinitions/US01_02.java
+deleted file mode 100644
+--- a/src/test/java/stepDefinitions/uiStepDefinitions/US01_02.java	
++++ /dev/null	
+@@ -1,205 +0,0 @@
+-package stepDefinitions.uiStepDefinitions;
+-
+-import io.cucumber.java.en.And;
+-import io.cucumber.java.en.Given;
+-import io.cucumber.java.en.Then;
+-
+-public class US01_02 {
+-
+-    @Given("kullanici ana sayfaya gider")
+-    public void kullanici_ana_sayfaya_gider() {
+-
+-    }
+-
+-    @Given("kullanici ikonu altinda yer alan register butonuna tiklar")
+-    public void kullanici_ikonu_altinda_yer_alan_register_butonuna_tiklar() {
+-
+-    }
+-
+-    @Given("kullanici SSN kutucuguna tiklar")
+-    public void kullanici_ssn_kutucuguna_tiklar() {
+-
+-    }
+-
+-    @Given("Kullanici SSN kutucuguna sadece rakamlar girer, harf ve özel karakter girmez")
+-    public void kullanici_ssn_kutucuguna_sadece_rakamlar_girer_harf_ve_özel_karakter_girmez() {
+-
+-    }
+-
+-    @Then("Your SSN is invalid uyari mesajinin goruntulenmedigini dogrular")
+-    public void your_ssn_is_invalid_uyari_mesajinin_goruntulenmedigini_dogrular() {
+-
+-    }
+-
+-    @Then("Kullanici SSN kutucuguna sadece harf ve özel karakter girer")
+-    public void kullanici_ssn_kutucuguna_sadece_harf_ve_özel_karakter_girer() {
+-
+-    }
+-
+-    @Then("Your SSN is invalid uyari mesajinin goruntulendigini dogrular")
+-    public void your_ssn_is_invalid_uyari_mesajinin_goruntulendigini_dogrular() {
+-
+-    }
+-
+-
+-    @Then("Your SSN is invalid uyari mesajının goruntulendigini dogrular")
+-    public void your_ssn_is_invalid_uyari_mesajının_goruntulendigini_dogrular() {
+-
+-    }
+-
+-
+-    @Then("Kullanici herhangi bir uyari yazisi alinmadigini dogrular")
+-    public void kullanici_herhangi_bir_uyari_yazisi_alinmadigini_dogrular() {
+-
+-    }
+-
+-    @Given("kullanici kutucugu bos birakir")
+-    public void kullanici_kutucugu_bos_birakir() {
+-
+-    }
+-
+-    @Then("Your SSN is required uyari mesajinin goruntulendigini dogrular")
+-    public void your_ssn_is_required_uyari_mesajinin_goruntulendigini_dogrular() {
+-
+-    }
+-
+-
+-    @And("Kullanici SSN kutucuguna on rakam girer. Uc ve besinci rakamdan sonra - karakterini ekler")
+-    public void kullaniciSSNKutucugunaOnRakamGirerUcVeBesinciRakamdanSonraKarakteriniEkler() {
+-
+-    }
+-
+-    @And("Kullanici SSN kutucuguna dokuz rakam girer. Uc ve besinci rakamdan sonra - karakterini eklemez")
+-    public void kullaniciSSNKutucugunaDokuzRakamGirerUcVeBesinciRakamdanSonraKarakteriniEklemez() {
+-
+-    }
+-
+-    @And("Kullanici SSN kutucuguna dokuz rakam girer. Uc ve besinci rakamdan sonra - karakterini ekler")
+-    public void kullaniciSSNKutucugunaDokuzRakamGirerUcVeBesinciRakamdanSonraKarakteriniEkler() {
+-
+-    }
+-
+-
+-    @Given("kullanici First Name kutucuğuna tiklar ardindan bos birakir")
+-    public void kullaniciFirstNameKutucuğunaTiklarArdindanBosBirakir() {
+-
+-    }
+-
+-    @And("Your FirstName is required uyari mesajinin goruntulendigini dogrular")
+-    public void yourFirstNameIsRequiredUyariMesajininGoruntulendiginiDogrular() {
+-
+-    }
+-
+-    @And("Kullanici herhangi bir karakter veya karakterler girer")
+-    public void kullaniciHerhangiBirKarakterVeyaKarakterlerGirer() {
+-
+-    }
+-
+-    @Then("Your FirstName is required uyarı mesajinin alinmadigini dogrular")
+-    public void yourFirstNameIsRequiredUyarıMesajininAlinmadiginiDogrular() {
+-
+-    }
+-
+-    @And("kullanici First Name kutucugunu doldurarak alt kutucuga gecer")
+-    public void kullaniciFirstNameKutucugunuDoldurarakAltKutucugaGecer() {
+-
+-    }
+-
+-    @Given("kullanici Last Name kutucuğuna tiklar ardindan bos birakir")
+-    public void kullaniciLastNameKutucuğunaTiklarArdindanBosBirakir() {
+-
+-    }
+-
+-    @And("Your LastName is required uyari mesajinin goruntulendigini dogrular")
+-    public void yourLastNameIsRequiredUyariMesajininGoruntulendiginiDogrular() {
+-
+-    }
+-
+-    @Then("Your LastName is required uyari mesajinin alinmadigini dogrular")
+-    public void yourLastNameIsRequiredUyariMesajininAlinmadiginiDogrular() {
+-
+-    }
+-
+-    @And("kullanici Last Name kutucugunu doldurarak alt kutucuga gecer")
+-    public void kullaniciLastNameKutucugunuDoldurarakAltKutucugaGecer() {
+-
+-    }
+-
+-
+-    @And("Your email is required to be at least {int}characters uyarı mesajının görüntülendigini dogrular")
+-    public void yourEmailIsRequiredToBeAtLeastCharactersUyarıMesajınınGörüntülendiginiDogrular(int arg0) {
+-
+-    }
+-
+-    @Given("Kullanici User Name kutucuguna tiklar")
+-    public void kullaniciUserNameKutucugunaTiklar() {
+-    }
+-
+-    @And("Kullanici bos birakir ve alt satira gecer")
+-    public void kullaniciBosBirakirVeAltSatiraGecer() {
+-    }
+-
+-    @Then("Your username is required uyari mesajinin goruntulendigini dogrular")
+-    public void yourUsernameIsRequiredUyariMesajininGoruntulendiginiDogrular() {
+-    }
+-
+-    @And("kullanici harflerden olusan bir karakter veya karakterler girer")
+-    public void kullaniciHarflerdenOlusanBirKarakterVeyaKarakterlerGirer() {
+-    }
+-
+-    @Then("Your username is required uyari mesajinin goruntulenmedigini dogrular")
+-    public void yourUsernameIsRequiredUyariMesajininGoruntulenmediginiDogrular() {
+-    }
+-
+-    @And("kullanici ozel karakter girer")
+-    public void kullaniciOzelKarakterGirer() {
+-    }
+-
+-    @Then("Your username is invalid uyari mesajinin goruntulendigini dogrular")
+-    public void yourUsernameIsInvalidUyariMesajininGoruntulendiginiDogrular() {
+-    }
+-
+-    @And("kullanici basta ve sonda bosluk birakarak username girer")
+-    public void kullaniciBastaVeSondaBoslukBirakarakUsernameGirer() {
+-    }
+-
+-    @And("kullanici harf ve rakamlardan olusan,herhangi bir karakter sinirlamasi olmayan username girer.")
+-    public void kullaniciHarfVeRakamlardanOlusanHerhangiBirKarakterSinirlamasiOlmayanUsernameGirer() {
+-    }
+-
+-    @Then("kullanici uyari mesajinin goruntulenmedigini dogrular.")
+-    public void kullaniciUyariMesajininGoruntulenmediginiDogrular() {
+-    }
+-
+-    @Given("Kullanici email kutucuguna bes karakterden az karakter girer")
+-    public void kullaniciEmailKutucugunaBesKarakterdenAzKarakterGirer() {
+-    }
+-
+-    @And("Your email is required to be at least characters uyari mesajinin goruntulendigini dogrular")
+-    public void yourEmailIsRequiredToBeAtLeastCharactersUyariMesajininGoruntulendiginiDogrular() {
+-    }
+-
+-    @And("kullanici @ ve . karakterlerini kullanmadan email kutucugunu doldurur")
+-    public void kullaniciVeKarakterleriniKullanmadanEmailKutucugunuDoldurur() {
+-    }
+-
+-    @Then("This field is invalid mesajinin goruntulendigini dogrular")
+-    public void thisFieldIsInvalidMesajininGoruntulendiginiDogrular() {
+-    }
+-
+-    @And("kullanici @ ve . karakterlerini en basta veya en sonda kullanarak doldurur")
+-    public void kullaniciVeKarakterleriniEnBastaVeyaEnSondaKullanarakDoldurur() {
+-    }
+-
+-    @And("kullanici @ ve . karakterlerini kullanarak istenen formatta bir email adresi girer")
+-    public void kullaniciVeKarakterleriniKullanarakIstenenFormattaBirEmailAdresiGirer() {
+-    }
+-
+-    @Then("Herhangi bir uyarı mesajı alınmadıgını dogrular")
+-    public void herhangiBirUyarıMesajıAlınmadıgınıDogrular() {
+-    }
+-
+-
+-
+-
+-}

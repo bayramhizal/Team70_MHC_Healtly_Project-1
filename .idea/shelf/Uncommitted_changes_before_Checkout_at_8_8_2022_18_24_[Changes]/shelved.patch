@@ -1,0 +1,16 @@
+Index: src/test/resources/features/us_01/US01.feature
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@parametre\r\nFeature: Kayit olmak için SSN, Firstname ve Lastname bilgileri girilebilmelidir.\r\n\r\n\r\n  Background: Register sayfasina gidis\r\n\r\n    Given kullanici ana sayfaya gider\r\n    And kullanici ikonu altinda yer alan register butonuna tiklar\r\n\r\n\r\n  Scenario: TC01_Gecerli bir SSN, 3. ve 5. rakamdan sonra \"-\"  icermeli ve 9 rakamdan olusmalidir\r\n\r\n    Given kullanici SSN kutucuguna tiklar\r\n    And Kullanici SSN kutucuguna sadece rakamlar girer, harf ve özel karakter girmez\r\n    Then Your SSN is invalid uyari mesajinin goruntulenmedigini dogrular\r\n    And Kullanici SSN kutucuguna sadece harf ve özel karakter girer\r\n    Then Your SSN is invalid uyari mesajinin goruntulendigini dogrular\r\n    And Kullanici SSN kutucuguna on rakam girer. Uc ve besinci rakamdan sonra - karakterini ekler\r\n    Then Your SSN is invalid uyari mesajının goruntulendigini dogrular\r\n    And Kullanici SSN kutucuguna dokuz rakam girer. Uc ve besinci rakamdan sonra - karakterini eklemez\r\n    Then Your SSN is invalid uyari mesajinin goruntulendigini dogrular\r\n    And Kullanici SSN kutucuguna dokuz rakam girer. Uc ve besinci rakamdan sonra - karakterini ekler\r\n    Then Kullanici herhangi bir uyari yazisi alinmadigini dogrular\r\n\r\n  Scenario: TC02_SSN bos birakilmamalidir\r\n\r\n    Given kullanici SSN kutucuguna tiklar\r\n    And kullanici kutucugu bos birakir\r\n    Then Your SSN is required uyari mesajinin goruntulendigini dogrular\r\n\r\n\r\n  Scenario: TC03_Herhangi bir karakter iceren ve bos birakilamayan gecerli bir First Name olmalidir\r\n\r\n    Given kullanici First Name kutucuğuna tiklar ardindan bos birakir\r\n    And Your FirstName is required uyari mesajinin goruntulendigini dogrular\r\n    And Kullanici herhangi bir karakter veya karakterler girer\r\n    Then Your FirstName is required uyarı mesajinin alinmadigini dogrular\r\n    And kullanici First Name kutucugunu doldurarak alt kutucuga gecer\r\n\r\n  Scenario: TC04_Herhangi bir karakter iceren ve bos birakilamayan gecerli bir Last Name olmalidir\r\n\r\n    Given kullanici Last Name kutucuğuna tiklar ardindan bos birakir\r\n    And Your LastName is required uyari mesajinin goruntulendigini dogrular\r\n    And Kullanici herhangi bir karakter veya karakterler girer\r\n    Then Your LastName is required uyari mesajinin alinmadigini dogrular\r\n    And kullanici Last Name kutucugunu doldurarak alt kutucuga gecer\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/resources/features/us_01/US01.feature b/src/test/resources/features/us_01/US01.feature
+--- a/src/test/resources/features/us_01/US01.feature	
++++ b/src/test/resources/features/us_01/US01.feature	
+@@ -46,3 +46,5 @@
+     And kullanici Last Name kutucugunu doldurarak alt kutucuga gecer
+ 
+ 
++
++
