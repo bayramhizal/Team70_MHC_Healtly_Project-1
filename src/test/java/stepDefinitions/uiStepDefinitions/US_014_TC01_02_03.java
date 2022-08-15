@@ -1,20 +1,10 @@
 package stepDefinitions.uiStepDefinitions;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.apache.http.util.Asserts;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import pages.DoktorPage;
-import utilities.ConfigReader;
 import utilities.Driver;
-
-import java.sql.DriverManager;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static utilities.ReusableMethods.waitFor;
 
