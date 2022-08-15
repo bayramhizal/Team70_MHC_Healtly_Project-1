@@ -16,13 +16,13 @@ import java.util.*;
 
 public class US09_ApiStepDefinitions {
 
-    Response response;
+    static Response response;
     @Given("{string} URLe alma istegi gonderir")
     public void urleAlmaIstegiGonderir(String account) {
 
        switch (account){
            case "Admin" :
-               response= ApiUtils.getRequest(Authentication.generateToken(ConfigReader.getProperty("adminUN"),ConfigReader.getProperty("adminPW")),"https://medunna.com/api/patients?=size=10000");
+               response= ApiUtils.getRequest(Authentication.generateToken(ConfigReader.getProperty("adminUN"),ConfigReader.getProperty("adminPW")),"https://medunna.com/api/patients?=size=300");
                response.prettyPrint();
                break;
            case "Staff" :
