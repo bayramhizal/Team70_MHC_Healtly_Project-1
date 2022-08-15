@@ -199,7 +199,7 @@ public class DoktorPage {
     @FindBy(xpath = "//*[text()='Appointment']")
     public WebElement myInPatientsAppointment;
 
-    @FindBy(xpath = "//*[text()='ID'")
+    @FindBy(xpath = "//*[text()='ID']")
     public WebElement myInPatientsId;
 
     @FindBy(xpath = "//*[text()='Start Date']")
