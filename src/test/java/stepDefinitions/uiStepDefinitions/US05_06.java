@@ -4,129 +4,135 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.PatientPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.List;
 
+import static utilities.Driver.driver;
+import static utilities.Driver.getDriver;
+
 public class US05_06 {
     PatientPage patientPage = new PatientPage();
-    Actions actions = new Actions(Driver.driver);
+    Actions actions = new Actions(Driver.getDriver());
+    JavascriptExecutor js= (JavascriptExecutor) getDriver();
     Faker faker = new Faker();
 
-
-    @Given("User anasayfaya gider")
-    public void user_anasayfaya_gider() {
-
+    @When("Kullanici make an appointment butonuna tiklamali")
+    public void kullanici_make_an_appointment_butonuna_tiklamali() {
+        patientPage.make_an_appointment.click();
     }
-
-    @Then("Kullanici sisteme signIn yapar")
-    public void kullanici_sisteme_sign_in_yapar() {
-        actions.moveToElement(patientPage.ilkAccountMenuSignIn).click().perform();
-
-    }
-
-    @Then("Firstname girer")
-    public void firstname_girer() {
+    @When("Kullanici firstname girmelidir")
+    public void kullanici_firstname_girmelidir() {
         patientPage.firstName.sendKeys(faker.name().firstName());
     }
-
-    @Then("Lastname girer")
-    public void lastname_girer() {
+    @When("Kullanici lastname girmelidir")
+    public void kullanici_lastname_girmelidir() {
         patientPage.lastName.sendKeys(faker.name().lastName());
     }
-
-    @Then("SSN no girer")
-    public void ssn_no_girer() {
-        patientPage.ssn.sendKeys(faker.numerify(""));
+    @When("Kullanici ssn numarasini girmelidir")
+    public void kullanici_ssn_numarasini_girmelidir() {
+        patientPage.ssn.sendKeys(faker.numerify("###-##-####"));
     }
-
-    @Then("On rakamli telefon no girer")
-    public void On_rakamli_telefon_no_girer() {
-        patientPage.phone.sendKeys(faker.number().digits(10));
+    @When("Kullanici email bilgilerini girmelidir")
+    public void kullanici_email_bilgilerini_girmelidir() {
+        patientPage.email.sendKeys(faker.internet().emailAddress());
     }
-
-    @Then("email adresini girer")
-    public void email_adresini_girer() {
-        patientPage.email.sendKeys("zubeyr35@gmail.com");
-    }
-
-    @Then("Send an appointment Request sekmesini tiklar")
-    public void send_an_appointment_request_sekmesini_tiklar() {
-        patientPage.sendRequestSubmit.submit();
-    }
-
-    @Then("Sag ustteki profil ismini tiklar")
-    public void sag_ustteki_profil_ismini_tiklar() {
-        actions.moveToElement(patientPage.ikinciSignIn).click().perform();
-    }
-
-    @Then("Setting kismini secer")
-    public void setting_kismini_secer() throws InterruptedException {
-        Thread.sleep(1000);
-        patientPage.userName.sendKeys("Mesved");
-        patientPage.password.sendKeys("Canberk1975-*-");
-        patientPage.submit.click();
-    }
-
-    @Then("Kullanici profilini goruntuler")
-    public void kullanici_profilini_goruntuler() {
-        patientPage.make_an_appointment_text.isDisplayed();
+    @When("Kullanici on haneli telefon no girmeli")
+    public void kullanici_haneli_telefon_no_girmeli() {
+        patientPage.phone.sendKeys(faker.numerify("###-###-####"));
 
     }
-
-    @Given("Main page gidilir")
-    public void main_page_gidilir() {
-
+    @When("Kullanici send an appointment butonuna tiklamali")
+    public void kullanici_send_and_appointment_butonuna_tiklamali() {
+        WebDriverWait wait=new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.elementToBeClickable(patientPage.sendRequestSubmit));
+        patientPage.sendRequestSubmit.click();
+    }
+    @Then("Kullanici kaydedildi mesajini gorebilmelidir")
+    public void kullanici_kaydedildi_mesajini_gorebilmelidir() {
+        Assert.assertTrue(patientPage.TestCase1Assertion.isDisplayed());
     }
 
-    @When("Tiklanir accounta")
-    public void tiklanir_accounta() {
-        actions.moveToElement(patientPage.ilkAccountMenuSignIn).click().perform();
+
+    @And("Kullanici send an appointment butonuna tiklamalidir")
+    public void kullaniciSendAnAppointmentButonunaTiklamalidir() {
+        WebDriverWait wait=new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.elementToBeClickable(patientPage.sendRequestSubmit));
+        js.executeScript("arguments[0].click();",patientPage.sendRequestSubmit);
     }
 
-    @Then("Tiklanir signIn")
-    public void tiklanir_sign_in() {
+    @Then("kullanici hata mesajlarini almalidir")
+    public void kullaniciHataMesajlariniAlmalidir() {
+        Assert.assertTrue(patientPage.firstnameInvalidText.isDisplayed());
+        Assert.assertTrue(patientPage.lastnameInvalidText.isDisplayed());
+        Assert.assertTrue(patientPage.emailInvalidText.isDisplayed());
+        Assert.assertTrue(patientPage.ssnInvalidText.isDisplayed());
+        Assert.assertTrue(patientPage.phoneInvalidText.isDisplayed());
+    }
+
+
+
+
+
+
+
+
+
+    @When("Kullanici Sign-in butonuna tiklamali")
+    public void kullanici_sign_in_butonuna_tiklamali() {
+        WebDriverWait wait=new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.elementToBeClickable(patientPage.accountMenuSigninOncesi));
+        patientPage.accountMenuSigninOncesi.click();
         patientPage.ikinciSignIn.click();
     }
-
-    @Then("Username ve password girilir ve submite tiklanir")
-    public void username_ve_password_girilir_ve_submite_tiklanir() {
+    @When("Kullanici username girmelidir")
+    public void kullanici_username_girmelidir() {
         patientPage.userName.sendKeys("Mesved");
-
-        patientPage.password.sendKeys("Canberk1975-*-");
-        patientPage.submit.click();
     }
-
-    @Then("Yine Profil accounta tiklanir")
-    public void yine_profil_accounta_tiklanir() throws InterruptedException {
-        Thread.sleep(3000);
+    @When("Kullanici password girmelidir")
+    public void kullanici_password_girmelidir() {
+        patientPage.password.sendKeys("Canberk1975-*-");
+    }
+    @When("Kullanici Signin butonuna tiklamalidir")
+    public void kullanici_signin_butonuna_tiklamalidir() {
+        patientPage.SifreSonrasiSignin.click();
+    }
+    @When("Kullanici profil ismine tiklamalidir")
+    public void kullanici_profil_ismine_tiklamalidir() {
         patientPage.profilBilgleriniGorme.click();
     }
-
-    @Then("Setting butonu secilir")
-    public void setting_butonu_secilir() {
+    @When("Kullanici settings butonuna tiklamalidir")
+    public void kullanici_settings_butonuna_tiklamalidir() {
         patientPage.settings.click();
     }
-
-    @Then("firstname lastname ve email guncellenir save butonuna tiklanir")
-    public void firstname_lastname_ve_email_guncellenir_save_butonuna_tiklanir() {
+    @When("kullanici adini,soyadini,emailini guncellemelidir")
+    public void kullanici_adini_soyadini_emailini_guncellemelidir() {
         patientPage.firstName.clear();
         patientPage.firstName.sendKeys("james");
         patientPage.lastName.clear();
         patientPage.lastName.sendKeys("bond");
         patientPage.email.clear();
         patientPage.email.sendKeys("zubeyr35@gmail.com");
+
+    }
+    @When("Kullannici save butonuna tiklamalidir")
+    public void kullannici_save_butonuna_tiklamalidir() {
         patientPage.submit.click();
     }
-
-    @Then("Save edildi yazisi goruntulendigi teyit edilir")
-    public void save_edildi_yazisi_goruntulendigi_teyit_edilir() {
+    @Then("Kullanici kaydedildi yazisini gorebilmelidir")
+    public void kullanici_kaydedildi_yazisini_gorebilmelidir() {
         Assert.assertTrue(patientPage.saveTextButonu.isDisplayed());
-
     }
 
+
 }
+
+
+
