@@ -11,7 +11,9 @@ Feature: US09 Staff hasta bilgilerini gorebilmeli, duzenleyebilmeli ve silebilme
 
 
 
+
   Scenario: TC02 Kullanici butun hasta bilgilerini duzenleyebilmelidir
+
 
     Given kullanici Staff olarak giris yapar
     Then kullanici MyPage sekmesine basar
@@ -27,5 +29,5 @@ Feature: US09 Staff hasta bilgilerini gorebilmeli, duzenleyebilmeli ve silebilme
     Given kullanici Staff olarak giris yapar
     Then kullanici MyPage sekmesine basar
     And kullanici MyPage sekmesinde SearchPatients sekmesine tiklar
-    And Staff gecerli bir "415-15-2256" bilgisini Patient SSN: alanına girer
+    And Staff gecerli bir "865-12-6357" bilgisini Patient SSN: alanına girer
     Then SSN i girilen hastanin kayit bilgileri dogrulanir
