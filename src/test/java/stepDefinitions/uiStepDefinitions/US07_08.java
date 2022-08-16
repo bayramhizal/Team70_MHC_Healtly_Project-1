@@ -7,6 +7,7 @@ import org.junit.Assert;
 import pages.PatientPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -149,6 +150,7 @@ public class US07_08 {
     public void hasta_the_password_and_its_confirmation_do_not_match_uyarisi_almali() {
 
         String actual = patientpage.passwordChanged.getText();
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(patientpage.passwordChanged.isDisplayed());
 
 
