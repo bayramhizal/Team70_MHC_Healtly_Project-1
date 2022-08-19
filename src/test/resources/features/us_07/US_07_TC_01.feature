@@ -1,4 +1,4 @@
-@US0708
+@E2E
 Feature: Get Cucumber Projesi
 
   Scenario: US07_TC01_Kullanici gecerli tarih girmelidir.(guncel tarihi veya gelecekteki tarihleri secebilmelidir.)
