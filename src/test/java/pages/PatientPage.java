@@ -156,5 +156,64 @@ public class PatientPage {
     @FindBy(className = "Toastify__toast-body")
     public WebElement passwordChanged;
 
+
+ //Bayram 160-219
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
