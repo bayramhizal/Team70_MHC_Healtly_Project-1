@@ -1,5 +1,8 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -12,8 +15,10 @@ public class AdminPage {
 
     // Arif 13- 79
 
-
-
+    @FindBy (xpath ="//*[text()=\"CONTACT\"]" )
+    public WebElement contactButton;
+    @FindBy (xpath ="//*[text()=\"Contact\"]" )
+    public WebElement contactYazi;
 
 
 
