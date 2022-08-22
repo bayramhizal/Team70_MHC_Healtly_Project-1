@@ -13,7 +13,7 @@ public class PatientPage {
     public PatientPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
+//senturk
     @FindBy(xpath = "//span[@class='d-none d-md-inline']")
     public WebElement make_an_appointment;
 
@@ -215,5 +215,66 @@ public class PatientPage {
 
 
 
+
+    //Bayram 160-219
+
+    //221-Senturk
+
+    @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
+    public WebElement accountTikla;
+
+    @FindBy(id = "login-item")
+    public WebElement firstSignIn;
+
+    @FindBy(id = "username")
+    public WebElement firstUserName;
+
+    @FindBy(name = "password")
+    public WebElement firstpassword;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement SecondSignIn;
+
+    @FindBy(xpath = "(//li[@id='entity-menu'])[1]")
+    public WebElement ItemsTitleTikla;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[7]")
+    public WebElement CountryTikla;
+
+    @FindBy(xpath = "//a[@id='jh-create-entity']")
+    public WebElement CreateNewCountry;
+
+    @FindBy(xpath = "//input[@id='country-name']")
+    public WebElement CountryNameGir;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement SaveTikla;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement SaveTextGorunurlugu;
+
+    @FindBy(xpath = "//*[@id='entity-menu']")
+    public WebElement ItemsTitleGider;
+
+    @FindBy(xpath = "//a[@href='/c-state']")
+    public  WebElement StateCityTiklar;
+
+    @FindBy(xpath = "//a[@id='jh-create-entity']/span")
+    public WebElement CreateNewCity;
+
+    @FindBy(xpath = "//input[@id='c-state-name']")
+    public WebElement StateName;
+
+    @FindBy (xpath = "//select[@id='c-state-state']")
+    public  WebElement StateState;
+
+    @FindBy(xpath = "//button[@id='save-entity']/span")
+    public  WebElement SaveEntity;
+
+    @FindBy (xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
+    public WebElement HataYazisi;
+
+
 }
+
 
