@@ -38,6 +38,59 @@ public class StaffPage {
 
 
     //Adem 40-99
+//@FindBy(xpath = "//*[text()='MY PAGES']")
+  //  public WebElement MyPageButton;
+
+    @FindBy(xpath = "//input")
+    public WebElement patientSSN;
+
+    @FindBy(xpath = "//span[text()='Show Appointments']")
+    public WebElement showAppointments;
+
+    @FindBy(xpath = "(//span[text()='Edit'])[2]")
+    public WebElement EditButton;
+
+    @FindBy(xpath = "//input[@name=\"startDate\"]")
+    public WebElement startDate;
+
+    @FindBy(xpath = "//input[@name=\"endDate\"]")
+    public WebElement endDate;
+
+    @FindBy(xpath = "//select[@id=\"appointment-status\"]")
+    public WebElement statusSelectButton;
+
+    @FindBy(xpath = "(//textarea)[1]")
+    public WebElement anamnesisButton;
+
+    @FindBy(xpath = "(//textarea)[2]")
+    public WebElement treatmentButton;
+
+    @FindBy(xpath = "(//textarea)[3]")
+    public WebElement diagnosisButton;
+
+    @FindBy(xpath = "(//textarea)[4]")
+    public WebElement prescriptionButton;
+
+    @FindBy(xpath = "(//textarea)[5]")
+    public WebElement descriptionButton;
+
+    @FindBy(xpath = "//select[@id='appointment-physician']")
+    public WebElement physicianButton;
+
+    @FindBy(id = "save-entity")
+    public WebElement savedButton;
+
+    @FindBy(xpath = "//div[@role='alert]")
+    public WebElement alertButton;
+
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement usernameStaff;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordStaff;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInButton2;
 
 
 
@@ -97,7 +150,14 @@ public class StaffPage {
 
 
 
- //Enes    100-159
+
+
+
+
+
+
+
+    //Enes    100-159
 
 
 
