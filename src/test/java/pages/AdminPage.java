@@ -23,10 +23,10 @@ public class AdminPage {
     public WebElement nameButonu;
     @FindBy(xpath = "//button[@id=\"register-submit\"]")
     public WebElement sendButonu;
-
-
-
-
+     @FindBy(xpath ="/html/body/div/div/div/div[2]/nav/div/ul/li[7]/a/span")
+    public WebElement itemButton;
+    @FindBy(xpath = "/html/body/div/div/div/div[2]/nav/div/ul/li[7]/div/a[2]/span")
+    public WebElement staffButton;
 
 
 
