@@ -156,5 +156,17 @@ public class PatientPage {
     @FindBy(className = "Toastify__toast-body")
     public WebElement passwordChanged;
 
+    @FindBy(xpath ="//*[text()='28/08/22 02:00']" )
+    public WebElement dateTime;
+
+    @FindBy(xpath = "//*[text()='220390']")
+    public WebElement id;
+
+    @FindBy(xpath ="//*[text()='28/08/22 02:00']" )
+    public WebElement startDateTime;
+
+    @FindBy(xpath ="//*[text()='UNAPPROVED']" )
+    public WebElement status;
+
 }
 
