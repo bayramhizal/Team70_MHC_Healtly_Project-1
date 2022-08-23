@@ -17,24 +17,24 @@ public class US_04 {
     MedunnaPage medunnaPage = new MedunnaPage();
     JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
 
-    @Given("Kullanıcı User iconuna tıklar")
-    public void kullanıcı_user_iconuna_tıklar() {
+    @Given("Kullanici User iconuna tiklar")
+    public void kullanici_user_iconuna_tiklar() {
         doktorPage.kullaniciResmibutonu.click();
     }
 
-    @Given("Kullanıcı Sign In butonuna tıklar")
-    public void kullanıcı_sign_in_butonuna_tıklar() {
+    @Given("Kullanici Sign In butonuna tiklar")
+    public void kullanici_sign_in_butonuna_tiklar() {
         doktorPage.signInButton.click();
     }
 
-    @Given("Kullanıcı Username box a kullanıcı adı girer")
-    public void kullanıcı_username_box_a_kullanıcı_adı_girer() {
+    @Given("Kullanici Username box a kullanici adi girer")
+    public void kullanici_username_box_a_kullanici_adi_girer() {
         doktorPage.usernameBox.sendKeys(ConfigReader.getProperty("doktorUsername"));
 
     }
 
-    @Given("Kullanıcı Password box a password girer")
-    public void kullanıcı_password_box_a_password_girer() {
+    @Given("Kullanici Password box a password girer")
+    public void kullanici_password_box_a_password_girer() {
         doktorPage.passwordBox.sendKeys(ConfigReader.getProperty("doktorPassword"));
     }
 
@@ -43,8 +43,8 @@ public class US_04 {
         doktorPage.signInButton2.click();
     }
 
-    @Given("Kullanıcı WELCOME TO MEDUNNA mesajını gorur")
-    public void kullanıcı_welcome_to_medunna_mesajını_gorur() {
+    @Given("Kullanici WELCOME TO MEDUNNA mesajini gorur")
+    public void kullanici_welcome_to_medunna_mesajini_gorur() {
 
         String expectedResult = "WELCOME TO MEDUNNA";
         String actualResult = medunnaPage.wellcomeToMedunna.getText();
@@ -61,20 +61,20 @@ public class US_04 {
         Assert.assertTrue(medunnaPage.rememberMeClickButton.isEnabled());
     }
 
-    @Given("Did you forget your password\" gorunur olmalıdır")
-    public void didYouForgetYourPasswordGorunurOlmalıdır() {
+    @Given("Did you forget your password\" gorunur olmalidir")
+    public void didYouForgetYourPasswordGorunurOlmalidir() {
         medunnaPage.didYouForgetPasswordButton.isDisplayed();
     }
 
 
-    @Then("Remember me tıklanabilir olmalidir")
-    public void rememberMeTıklanabilirOlmalidir() {
+    @Then("Remember me tiklanabilir olmalidir")
+    public void rememberMeTiklanabilirOlmalidir() {
         waitFor(2);
         medunnaPage.rememberMeClickButton.click();
     }
 
-    @And("Reset your password sayfasi gorunur olmalıdır")
-    public void resetYourPasswordSayfasiGorunurOlmalıdır() {
+    @And("Reset your password sayfasi gorunur olmalidir")
+    public void resetYourPasswordSayfasiGorunurOlmalidir() {
         medunnaPage.didYouForgetPasswordButton.click();
         waitFor(2);
         String expectedResult="Reset your password";
@@ -82,13 +82,13 @@ public class US_04 {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
-    @Given("You don't have an account yet? Register a new account gorunur olmalıdır")
-    public void youDonTHaveAnAccountYetRegisterANewAccountGorunurOlmalıdır() {
+    @Given("You don't have an account yet? Register a new account gorunur olmalidir")
+    public void youDonTHaveAnAccountYetRegisterANewAccountGorunurOlmalidir() {
         medunnaPage.youDontRegisterButton.isDisplayed();
     }
 
-    @Then("Register a new account tıklanabilir olmalidir")
-    public void registerANewAccountTıklanabilirOlmalidir() {
+    @Then("Register a new account tiklanabilir olmalidir")
+    public void registerANewAccountTiklanabilirOlmalidir() {
         jse.executeScript("arguments[0].scrollIntoView(true);",medunnaPage.registerAnewAccount);
         jse.executeScript("arguments[0].click();", medunnaPage.registerAnewAccount);
        // hover(medunnaPage.registerAnewAccount);
@@ -96,8 +96,8 @@ public class US_04 {
         waitFor(2);
     }
 
-    @Then("Registration sayfası gorunur olmalıdır")
-    public void registrationSayfasıGorunurOlmalıdır() {
+    @Then("Registration sayfasi gorunur olmalidir")
+    public void registrationSayfasiGorunurOlmalidir() {
         waitFor(2);
         String expectedResult="https://www.medunna.com/account/register";
        String actualResult= Driver.getDriver().getCurrentUrl();
@@ -105,8 +105,8 @@ public class US_04 {
       Assert.assertEquals(expectedResult, actualResult);
     }
 
-    @Given("Cancel gorunur olmalıdır")
-    public void cancelGorunurOlmalıdır() {
+    @Given("Cancel gorunur olmalidir")
+    public void cancelGorunurOlmalidir() {
         medunnaPage.cancelButton.isDisplayed();
     }
 
