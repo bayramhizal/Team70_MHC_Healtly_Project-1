@@ -13,7 +13,7 @@ public class PatientPage {
     public PatientPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-//senturk
+    // senturk 16-90
     @FindBy(xpath = "//span[@class='d-none d-md-inline']")
     public WebElement make_an_appointment;
 
@@ -88,7 +88,7 @@ public class PatientPage {
 
 
 
-    //serhan
+    //serhan  91-179
 
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement kullaniciIkonu;
@@ -156,7 +156,6 @@ public class PatientPage {
     @FindBy(className = "Toastify__toast-body")
     public WebElement passwordChanged;
 
-<<<<<<< HEAD
     @FindBy(xpath ="//*[text()='28/08/22 02:00']" )
     public WebElement dateTime;
 
@@ -168,19 +167,17 @@ public class PatientPage {
 
     @FindBy(xpath ="//*[text()='UNAPPROVED']" )
     public WebElement status;
-=======
-
- //Bayram 160-219
 
 
 
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    //Bayram 180-249
 
 
 
@@ -229,10 +226,29 @@ public class PatientPage {
 
 
 
-    //Bayram 160-219
 
-    //221-Senturk
 
+
+
+
+
+
+
+
+
+    
+
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    // Senturk 250-319
+    
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement accountTikla;
 
@@ -287,8 +303,18 @@ public class PatientPage {
     @FindBy (xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
     public WebElement HataYazisi;
 
->>>>>>> main
-
-}
 
 
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   }
