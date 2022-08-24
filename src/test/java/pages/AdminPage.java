@@ -238,47 +238,47 @@ public class AdminPage {
 
 
     // Adem 240-319
+   @FindBy(xpath = "//span[text()='Items&Titles']")
+    public WebElement ItemsTitle;
 
+   @FindBy(xpath = "//a[@class='dropdown-item active']")
+    public WebElement romms;
 
+   @FindBy(xpath = "//span[text()='Status']")
+    public WebElement status1;
 
+    @FindBy(id= "jh-create-entity")
+    public WebElement createANewButton;
 
+    @FindBy(xpath = "//span[text()='Create or edit a Room']")
+    public WebElement createRoom;
 
+    @FindBy(xpath = "//input[@name='roomNumber']")
+    public WebElement roomNumber;
 
+    @FindBy(xpath = "//select[@name='roomType']")
+    public WebElement roomTypeSelect;
 
+    @FindBy(id="room-status")
+    public WebElement status2;
 
+    @FindBy(xpath = "//input[@name='price']")
+    public WebElement price;
 
+    @FindBy(xpath = "//input[@name='description']")
+    public WebElement descriptionTextButton;
 
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement saveButton;
 
+    @FindBy(xpath = "//span[text()='Status']")
+    public WebElement status3;
 
+   @FindBy(xpath = "//input[@name='createdDate']")
+   public WebElement createdDatee;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  @FindBy(xpath = "//div[@role='alert']")
+  public WebElement alertButton;
 
 
 
@@ -397,7 +397,7 @@ public class AdminPage {
 
 
 
-    //Kadir 400-450
+//Kadir 400-450
 
 
 
