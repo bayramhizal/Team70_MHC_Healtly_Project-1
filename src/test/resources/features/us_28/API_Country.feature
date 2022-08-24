@@ -9,7 +9,7 @@ Feature: Country okuma,olusturma,guncelleme ve silme islemleri
 
     Examples: country olusturma
       |idJson|nameJson|
-      |name|PapuaYeniGine|
+      |123212|PapuaYeniGine|
 
   Scenario Outline:Coutry Guncelleme
     * kullanici api end point "https://www.medunna.com/api/countries/" den "<id>" ve "<name>" kullanarak guncelleme yapar
