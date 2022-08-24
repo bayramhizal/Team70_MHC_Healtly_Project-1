@@ -36,7 +36,7 @@ public class US_26 {
     }
 
     @And("Name, Email, Subject, Message bölümlerini doldurur")
-    public void nameEmailSubjectMessageBölümleriniDoldurur() {
+    public void nameEmailSubjectMessageBolumleriniDoldurur() {
 
         Actions actions=new Actions(Driver.getDriver());
         AdminPage adminPage=new AdminPage();
