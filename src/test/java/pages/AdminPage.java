@@ -23,14 +23,14 @@ public class AdminPage {
     public WebElement nameButonu;
     @FindBy(xpath = "//button[@id=\"register-submit\"]")
     public WebElement sendButonu;
-     @FindBy(xpath ="/html/body/div/div/div/div[2]/nav/div/ul/li[7]/a/span")
+     @FindBy(xpath ="//span[text()=\"Items&Titles\"]")
     public WebElement itemButton;
-    @FindBy(xpath = "/html/body/div/div/div/div[2]/nav/div/ul/li[7]/div/a[2]/span")
+    @FindBy(xpath = "//span[text()=\"Staff\"]")
     public WebElement staffButton;
-
-
-
-
+      @FindBy(xpath = "//span[text()=\"Create a new Staff\"]")
+    public WebElement creatButton;
+    @FindBy(xpath = "//input[@name=\"searchSSN\"]")
+    public WebElement ssnSearch;
 
 
 
