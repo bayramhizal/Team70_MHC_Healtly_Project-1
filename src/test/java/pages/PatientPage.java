@@ -13,7 +13,7 @@ public class PatientPage {
     public PatientPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-//senturk
+
     @FindBy(xpath = "//span[@class='d-none d-md-inline']")
     public WebElement make_an_appointment;
 
@@ -88,7 +88,7 @@ public class PatientPage {
 
 
 
-    //serhan
+    //serhan  91-179
 
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement kullaniciIkonu;
@@ -156,8 +156,28 @@ public class PatientPage {
     @FindBy(className = "Toastify__toast-body")
     public WebElement passwordChanged;
 
+    @FindBy(xpath ="//*[text()='28/08/22 02:00']" )
+    public WebElement dateTime;
 
- //Bayram 160-219
+    @FindBy(xpath = "//*[text()='220390']")
+    public WebElement id;
+
+    @FindBy(xpath ="//*[text()='28/08/22 02:00']" )
+    public WebElement startDateTime;
+
+    @FindBy(xpath ="//*[text()='UNAPPROVED']" )
+    public WebElement status;
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    //Bayram 180-249
     @FindBy(xpath = "//*[text()='Sign in']")
     public WebElement signInAccount;
     @FindBy(xpath = "//input[@name='username']")
@@ -170,7 +190,7 @@ public class PatientPage {
     public WebElement patientMyPagesButton;
     @FindBy(xpath = "//*[text()='My Appointments']")
     public WebElement patientMyApponitmentButton;
-    @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[8]")
+    @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[12]")
     public WebElement patientShowTestsButton;
     @FindBy(xpath = "//*[text()='View Results']")
     public WebElement patientViewResultsButton;
@@ -227,64 +247,8 @@ public class PatientPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Bayram 160-219
-
-    //221-Senturk
-
+    // Senturk 250-319
+    
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement accountTikla;
 
@@ -338,6 +302,19 @@ public class PatientPage {
 
     @FindBy (xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-left toastify-container']")
     public WebElement HataYazisi;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
