@@ -233,7 +233,7 @@ public class PatientPage {
     @FindBy(xpath = "//*[.='Appointment registration saved!']")
     public WebElement patientAppointmenttoastContainer;
 
-   //son valla
+   //bayram branch patladi
 
 
 
