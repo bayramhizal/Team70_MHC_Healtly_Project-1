@@ -13,7 +13,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="health_Project_Team70" target="17" />
+      <module name="health_Project_Team70" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
