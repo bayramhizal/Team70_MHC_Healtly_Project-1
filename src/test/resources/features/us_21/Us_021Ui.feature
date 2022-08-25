@@ -1,4 +1,4 @@
-@wip
+
 Feature: US_021 Staff hastalar için randevuları görür
 
   Background:US_021 Tekrar eden methodlar
