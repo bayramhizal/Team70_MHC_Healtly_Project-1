@@ -11,8 +11,13 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber-testrunner.xml"
         },
         features = "src/test/resources/features",
+
+        glue= "stepDefinitions",
+        tags= "@wip",
+
         glue= {"stepDefinitions","hooks"},
         tags= "@pasif",
+
         dryRun = false
 )
 
