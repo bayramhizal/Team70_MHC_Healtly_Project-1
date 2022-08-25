@@ -37,29 +37,30 @@ public class AdminPage {
     public  WebElement searchUserButton;
     @FindBy(xpath = "//div[text()=\"User found with search SSN\"]")
     public WebElement alertYazi;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//span[text()=\"View\"])[1]")
+    public WebElement viewButton;
+    @FindBy(xpath = "(//span[text()=\"Staff\"])[2]")
+    public WebElement staffYazisi;
+    @FindBy(xpath = "(//span[text()=\"Edit\"])[1]")
+    public WebElement editButton;
+    @FindBy(xpath = "//input[@id=\"staff-id\"]")
+    public WebElement staffIDButton;
+    @FindBy(xpath = "//input[@id=\"staff-lastName\"]")
+    public WebElement staffLastNameButton;
+    @FindBy(xpath = "//input[@id=\"staff-birthDate\"]")
+    public WebElement staffBirthDateBt;
+    @FindBy(xpath = "//span[text()=\"Save\"]")
+    public WebElement saveButton;
+    @FindBy(xpath = "//div[text()=\"A Staff is updated with identifier 211233\"]")
+    public WebElement alertYazi2;
+    @FindBy(xpath = "//input[@id=\"staff-createdDate\"]")
+    public WebElement staffcreatButton;
+    @FindBy(xpath = "(//span[text()=\"Delete\"])[1]")
+    public WebElement deleteButton;
+    @FindBy(xpath = "(//span[text()=\"Delete\"])[21]")
+    public WebElement alertDeleteButoon;
+    @FindBy(xpath = "//div[text()=\"A Staff is deleted with identifier 211233\"]")
+    public WebElement alert3;
 
 
 
