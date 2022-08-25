@@ -78,7 +78,12 @@
             <version>20220320</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-       
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.5</version>
+            <scope>test</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>                         <!-- API -->
