@@ -3,6 +3,7 @@ package stepDefinitions.uiStepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.AdminPage;
@@ -77,25 +78,70 @@ public class US_19 {
 
     @And("Kullanici acilan sayfada herhangi bir kullaniciyi goruntuler")
     public void kullaniciAcilanSayfadaHerhangiBirKullaniciyiGoruntuler() {
+        AdminPage adminPage=new AdminPage();
+        adminPage.viewButton.click();
+
         
     }
 
     @And("Kullanici acilan sayfanin {string} sayfasi oldugunu gorur")
     public void kullaniciAcilanSayfaninSayfasiOldugunuGorur(String arg0) {
+        AdminPage adminPage=new AdminPage();
+
+        Assert.assertTrue(adminPage.staffYazisi.isDisplayed());
         
     }
 
     @And("Kullanici acilan sayfada herhangi bir kullanici icin {string} butonuna basar")
     public void kullaniciAcilanSayfadaHerhangiBirKullaniciIcinButonunaBasar(String arg0) {
-        
+        AdminPage adminPage=new AdminPage();
+        adminPage.editButton.click();
+        adminPage.ssnSearch.sendKeys("145-17-126");
+        adminPage.staffIDButton.sendKeys("Ali");
+        adminPage.staffLastNameButton.sendKeys("Veli");
+        adminPage.staffBirthDateBt.sendKeys("20.08.2025 15:00");
+        adminPage.staffcreatButton.sendKeys("21.12.2026");
+        ReusableMethods.waitFor(3);
+        Actions actions=new Actions(Driver.getDriver());
+
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+
+
     }
 
     @And("Kullanici Staff bilgilerini gunceller ve {string} tusuna basar")
     public void kullaniciStaffBilgileriniGuncellerVeTusunaBasar(String arg0) {
-        
+        AdminPage adminPage=new AdminPage();
+        adminPage.saveButton.click();
+
+        ReusableMethods.waitFor(2);
     }
 
     @And("Acilan pencerede {string} uyarisini gorur")
     public void acilanPenceredeUyarisiniGorur(String arg0) {
+
+        AdminPage adminPage=new AdminPage();
+
+        Assert.assertTrue(adminPage.alertYazi2.isDisplayed());
+    }
+
+    @And("Kullanici acilan sayfada herhangi bir kullanici icin {string} butonunanana basar")
+    public void kullaniciAcilanSayfadaHerhangiBirKullaniciIcinButonunananaBasar(String arg0) {
+        AdminPage adminPage=new AdminPage();
+      //  Actions actions=new Actions(Driver.getDriver());
+      //  actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+        adminPage.deleteButton.click();
+
+        ReusableMethods.waitFor(2);
+        adminPage.alertDeleteButoon.click();
+
+        ReusableMethods.waitFor(2);
+    }
+
+    @And("Acilan pencerede {string} uyarisininini gorur")
+    public void acilanPenceredeUyarisinininiGorur(String arg0) {
+        AdminPage adminPage=new AdminPage();
+        Assert.assertTrue(adminPage.alert3.isDisplayed());
+
     }
 }
