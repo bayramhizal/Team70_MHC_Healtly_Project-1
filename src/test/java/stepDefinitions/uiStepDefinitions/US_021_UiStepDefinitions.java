@@ -81,7 +81,7 @@ public class US_021_UiStepDefinitions {
         String dateStr1 = formatter1.format(date1);
         System.out.println("date2 " + dateStr1);
         staffPage.endDate.sendKeys(dateStr1);
-        waitFor(10);
+        waitFor(2);
     }
 
     @Given("Kullanici Status secenegini bulup butun opsiyonlari secebilmeli")

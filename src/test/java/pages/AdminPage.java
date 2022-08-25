@@ -241,7 +241,7 @@ public class AdminPage {
    @FindBy(xpath = "//span[text()='Items&Titles']")
     public WebElement ItemsTitle;
 
-   @FindBy(xpath = "//a[@class='dropdown-item active']")
+   @FindBy(xpath = "(//a[@class='dropdown-item'])[6]")
     public WebElement romms;
 
    @FindBy(xpath = "//span[text()='Status']")
@@ -269,7 +269,7 @@ public class AdminPage {
     public WebElement descriptionTextButton;
 
     @FindBy(xpath = "//button[@type='submit']")
-    public WebElement saveButton;
+    public WebElement savedButton;
 
     @FindBy(xpath = "//span[text()='Status']")
     public WebElement status3;
@@ -280,9 +280,14 @@ public class AdminPage {
   @FindBy(xpath = "//div[@role='alert']")
   public WebElement alertButton;
 
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement usernameAdmin;
 
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordAdmin;
 
-
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInButton2;
 
 
 
