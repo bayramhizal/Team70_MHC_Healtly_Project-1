@@ -8,6 +8,7 @@ Feature: US19 Admin olarak;Yeni Staff (Personel) Oluşturma / Güncelleme / Gör
     Then Kullanici sing-in sekmesine basar
     And Kullanici Admin olarak giris yapar
     And Kullanici Item and Titles den "Staff" secimi yapar
+
 @arif1
   Scenario: TC01 Admin SSN kullanarak; kayıtlı kişiler arasında Staff arayabilir ve tumbilgileri dogrular.
 
