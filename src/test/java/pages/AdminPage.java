@@ -31,13 +31,12 @@ public class AdminPage {
     public WebElement creatButton;
     @FindBy(xpath = "//input[@name=\"searchSSN\"]")
     public WebElement ssnSearch;
-
-
-
-
-
-
-
+    @FindBy(xpath = "//input[@id=\"useSSNSearch\"]")
+    public WebElement useSearchButton;
+    @FindBy(xpath = "//button[text()=\"Search User\"]")
+    public  WebElement searchUserButton;
+    @FindBy(xpath = "//div[text()=\"User found with search SSN\"]")
+    public WebElement alertYazi;
 
 
 
