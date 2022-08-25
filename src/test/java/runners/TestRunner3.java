@@ -6,22 +6,16 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin={"html:target/cucumber-reports-testrunner.html",
-                "json:target/json-reports/cucumber-testrunner.json",
-                "junit:target/xml-report/cucumber-testrunner.xml"
-        },
+        plugin={"html:target/cucumber-reports-testrunner3.html",
+                "json:target/json-reports/cucumber-testrunner3.json",
+                "junit:target/xml-report/cucumber-testrunner3.xml"},
         features = "src/test/resources/features",
-
-        glue= "stepDefinitions",
-        tags= "@wip",
-
         glue= {"stepDefinitions","hooks"},
-        tags= "@pasif",
-
+        tags= "@arif",
         dryRun = false
 )
 
-public class TestRunner {
+public class TestRunner3 {
     /*
     Bir framework'de bir tek TestRunner3 class'i yeterli olabilir
     TestRunner3 class'inda class body'sinde hic bir sey olmaz

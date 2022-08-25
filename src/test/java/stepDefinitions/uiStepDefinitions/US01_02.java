@@ -9,7 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.asserts.SoftAssert;
+
 import pages.MedunnaPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -22,7 +22,7 @@ public class US01_02 {
     Select select;
     Faker faker;
     ReusableMethods reusable;
-    SoftAssert softAssert;
+ 
     JavascriptExecutor js;
 
     @Given("kullanici ana sayfaya gider")
