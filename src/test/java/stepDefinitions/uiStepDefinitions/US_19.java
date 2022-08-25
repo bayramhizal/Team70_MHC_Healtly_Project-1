@@ -2,12 +2,14 @@ package stepDefinitions.uiStepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.AdminPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.Methods;
+import utilities.ReusableMethods;
 
 public class US_19 {
 
@@ -48,14 +50,22 @@ public class US_19 {
     }
     @Then("Kullanici {string} secimi yapar ve {string} butonuna basar")
     public void kullanici_secimi_yapar_ve_butonuna_basar(String string, String string2) {
+        AdminPage adminPage=new AdminPage();
+        adminPage.useSearchButton.click();
+        adminPage.searchUserButton.click();
 
-
+        ReusableMethods.waitFor(2);
 
     }
     @Then("Kullanici {string} mesajini gorur")
     public void kullanici_mesajini_gorur(String string) {
+        AdminPage adminPage=new AdminPage();
+        String expectedResult="User found with search SSN";
+        String actualResult=adminPage.alertYazi.getText();
 
+        System.out.println(actualResult);
 
+        Assert.assertTrue(expectedResult.contains(actualResult));
 
     }
     @Then("Kullanici girmis oldugu SSN bilgisine gore {string} bilgilerini dogrular")
