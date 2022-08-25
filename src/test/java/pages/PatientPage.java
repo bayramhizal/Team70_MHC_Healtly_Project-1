@@ -13,7 +13,7 @@ public class PatientPage {
     public PatientPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    // senturk 16-90
+
     @FindBy(xpath = "//span[@class='d-none d-md-inline']")
     public WebElement make_an_appointment;
 
@@ -178,6 +178,60 @@ public class PatientPage {
     
     
     //Bayram 180-249
+    @FindBy(xpath = "//*[text()='Sign in']")
+    public WebElement signInAccount;
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement patientUsernameAccount;
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement patientPasswordAccount;
+    @FindBy(xpath = "(//*[text()='Sign in'])[3]")
+    public WebElement signInPatientAccount;
+    @FindBy(xpath = "//*[text()='MY PAGES(PATIENT)']")
+    public WebElement patientMyPagesButton;
+    @FindBy(xpath = "//*[text()='My Appointments']")
+    public WebElement patientMyApponitmentButton;
+    @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[12]")
+    public WebElement patientShowTestsButton;
+    @FindBy(xpath = "//*[text()='View Results']")
+    public WebElement patientViewResultsButton;
+    @FindBy(xpath = "//*[text()='Default Min. Value']")
+    public WebElement patientsTestDefMinValue;
+    @FindBy(xpath = "//a[@class='btn btn-link btn-sm']")
+    public WebElement patientResultsId;
+    @FindBy(xpath = "//*[.='coco']")
+    public WebElement patientResultsName;
+    @FindBy(xpath = "//*[.='ölecek']")
+    public WebElement patientResults;
+    @FindBy(xpath = "//*[.='567']")
+    public WebElement patientResultsMaxVALUE;
+    @FindBy(xpath = "//*[.='205830']")
+    public WebElement patientResultsTest;
+    @FindBy(xpath = "//*[.='kitapkumuyor']")
+    public WebElement patientResultsDescriptions;
+    @FindBy(xpath = "//*[text()='20/08/22 11:19']")
+    public WebElement patientResultsDate;
+    @FindBy(xpath = "//*[text()='Show Invoice']")
+    public WebElement patientShowInvoice;
+    @FindBy(xpath = "//*[text()='Date:']")
+    public WebElement invoiceDateResults;
+    @FindBy(xpath = "//*[text()='567-76-5678']")
+    public WebElement invoiceSSNResults;
+    @FindBy(xpath = "//*[text()='Name:']")
+    public WebElement invoiceName;
+    @FindBy(xpath = "//*[text()='hastamed tahtamed']")
+    public WebElement invoiceNameResults;
+    @FindBy(xpath = "//*[text()='CASH']")
+    public WebElement invoicePaymentsMethodResults;
+    @FindBy(xpath = "//*[text()='1500$']")
+    public WebElement invoiceTotalCostResults;
+    @FindBy(xpath = "//*[text()='Make an Appointment']")
+    public WebElement patientMakeAppointmentButton;
+    @FindBy(xpath = "//input[@name='phone']")
+    public WebElement patientAppointmentPhone;
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement patientNewAppointmenSendButton;
+    @FindBy(xpath = "//*[.='Appointment registration saved!']")
+    public WebElement patientAppointmenttoastContainer;
 
 
 
@@ -192,61 +246,6 @@ public class PatientPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-   
-    
-    
-    
-    
-    
-    
-    
-    
     // Senturk 250-319
     
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
@@ -307,14 +306,16 @@ public class PatientPage {
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   }
+
+
+
+
+
+
+
+
+
+
+}
+
+
