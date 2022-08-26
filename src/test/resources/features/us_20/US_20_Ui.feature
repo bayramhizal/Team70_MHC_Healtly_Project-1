@@ -1,0 +1,1 @@
+Feature: Admin; "User management" menusunden, kullanici Active eder ve gerekli rolleri olusturur.
