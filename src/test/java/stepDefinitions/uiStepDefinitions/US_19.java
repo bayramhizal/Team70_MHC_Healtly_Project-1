@@ -140,6 +140,7 @@ public class US_19 {
 
     @And("Acilan pencerede {string} uyarisininini gorur")
     public void acilanPenceredeUyarisinininiGorur(String arg0) {
+
         AdminPage adminPage=new AdminPage();
         Assert.assertTrue(adminPage.alert3.isDisplayed());
 
