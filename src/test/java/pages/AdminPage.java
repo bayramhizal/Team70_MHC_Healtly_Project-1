@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class AdminPage {
 
     public AdminPage() {
@@ -238,82 +240,80 @@ public class AdminPage {
 
 
     // Adem 240-319
+   @FindBy(xpath = "//span[text()='Items&Titles']")
+    public WebElement ItemsTitle;
 
+   @FindBy(xpath = "(//a[@class='dropdown-item'])[6]")
+    public WebElement romms;
 
+   @FindBy(xpath = "//span[text()='Status']")
+    public WebElement status1;
 
+    @FindBy(id= "jh-create-entity")
+    public WebElement createANewButton;
 
+    @FindBy(xpath = "//*[text()='Create or edit a Room']")
+    public WebElement createRoom;
 
+    @FindBy(xpath = "//input[@name='roomNumber']")
+    public WebElement roomNumber;
 
+    @FindBy(xpath = "//select[@name='roomType']")
+    public WebElement roomTypeSelect;
 
+    @FindBy(id="room-status")
+    public WebElement status2;
 
+    @FindBy(xpath = "//input[@name='price']")
+    public WebElement price;
 
+    @FindBy(xpath = "(//input[@type='text'])[2]")
+    public WebElement descriptionTextButton;
 
+    @FindBy(xpath = "//span[text()='Save']")
+    public WebElement savedButton;
 
+    @FindBy(xpath = "//span[text()='Status']")
+    public WebElement status3;
 
+   @FindBy(xpath = "//input[@name='createdDate']")
+   public WebElement createdDatee;
 
+  @FindBy(xpath = "//div[@role='alert']")
+  public WebElement alertButton;
 
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement usernameAdmin;
 
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordAdmin;
 
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInButton2;
 
+   @FindBy(xpath="//div[@class='invalid-feedback']")
+   public WebElement rommZorunlu;
+   @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+   public WebElement roomUyariRakamHarf;
 
+@FindBy(xpath = "//div[@class='invalid-feedback']")
+public WebElement priceUyariRakamHarf;
 
+@FindBy(xpath = "//div[@class='invalid-feedback']")
 
+public WebElement priceZorunlu;
 
+@FindBy(xpath = "//span[text()='Room Type']")
+public WebElement roomTypeBaslik;
 
+@FindBy(xpath = "//tbody//td[3]")
+public List<WebElement> roomTypList;
 
+@FindBy(xpath = "(//li[@class='page-item'])[4]")
+public WebElement sayfaDegistir;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@FindBy(xpath = "(//span[text()='Delete'])[18]")
+public WebElement deleteHasta;
 
 
 
@@ -397,7 +397,36 @@ public class AdminPage {
 
 
 
-    //Kadir 400-450
+//Kadir 400-450
+@FindBy(xpath = "(//a[@href=\"/c-message\"])[2]")
+public WebElement messageButton;
+
+    @FindBy(xpath = "//span[text()='Create a new Message']")
+    public WebElement createANewMessageButton;
+
+    @FindBy(xpath = "//div[@class='jh-card card']")
+    public WebElement messagesPage;
+
+    @FindBy(xpath = "//span[text()='ID']")
+    public WebElement messagesPageIdButton;
+
+    @FindBy(xpath = "//span[text()='Name']")
+    public WebElement messagesPageNameButton;
+
+    @FindBy(xpath = "//span[text()='Email']")
+    public WebElement messagesPageEmailButton;
+
+    @FindBy(xpath = "//span[text()='Subject']")
+    public WebElement messagesPageSubjectButton;
+
+    @FindBy(xpath = "//span[text()='Message']")
+    public WebElement messagesPageMessageButton;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement messagesPageMessageAlertYazi;
+
+    @FindBy(xpath = "//input[@id='c-message-name']")
+    public WebElement createMessagePageNameButton;
 
 
 
@@ -418,37 +447,7 @@ public class AdminPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Sentürk 450-519
-
+    //Sentürk 450-519
 
 
 

@@ -3,7 +3,7 @@
 Feature: US14 Physician (Doctor) "Edit Inpatient" (Yatılı Tedavi) işlemleri yapabilmeli
   (My Appointments / View / Edit Impatients)
 
-  Background: ortak adim befor method gibi calisir
+  Background:ortak adim befor method gibi calisir
 
     Given doktor "medunnaUrl" anasayfasindan
     When doktor kullanici resmine tiklar
