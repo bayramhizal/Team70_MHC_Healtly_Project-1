@@ -398,6 +398,35 @@ public WebElement deleteHasta;
 
 
 //Kadir 400-450
+@FindBy(xpath = "(//a[@href=\"/c-message\"])[2]")
+public WebElement messageButton;
+
+    @FindBy(xpath = "//span[text()='Create a new Message']")
+    public WebElement createANewMessageButton;
+
+    @FindBy(xpath = "//div[@class='jh-card card']")
+    public WebElement messagesPage;
+
+    @FindBy(xpath = "//span[text()='ID']")
+    public WebElement messagesPageIdButton;
+
+    @FindBy(xpath = "//span[text()='Name']")
+    public WebElement messagesPageNameButton;
+
+    @FindBy(xpath = "//span[text()='Email']")
+    public WebElement messagesPageEmailButton;
+
+    @FindBy(xpath = "//span[text()='Subject']")
+    public WebElement messagesPageSubjectButton;
+
+    @FindBy(xpath = "//span[text()='Message']")
+    public WebElement messagesPageMessageButton;
+
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement messagesPageMessageAlertYazi;
+
+    @FindBy(xpath = "//input[@id='c-message-name']")
+    public WebElement createMessagePageNameButton;
 
 
 
@@ -418,36 +447,7 @@ public WebElement deleteHasta;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Sentürk 450-519
+    //Sentürk 450-519
 
 
 
