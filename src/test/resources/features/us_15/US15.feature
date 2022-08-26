@@ -6,7 +6,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
 
   Scenario: Yeni hastalar Yonetici tarafindan olusturulabilir
 
-    Given kullanici sisteme "admin" olarak giris yapar
+    Given kullanici sisteme "adminn" olarak giris yapar
     And kullanici Item&Title sekmesinden Patient elementine tiklar
     Then kullanici Create a new Patient sekmesinin gorunur oldugunu dogrular
     Then kullanici Create a new Patient sekmesinin erisilebilir oldugunu dogrular
@@ -16,16 +16,16 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
 
   Scenario: Diger kullanicilar tarafindan yeni hasta olusturulamaz
 
-    Given kullanici sisteme "doktor" olarak giris yapar
+    Given kullanici sisteme "doktorr" olarak giris yapar
     Then kullanici yeni hasta kaydinin yapilamadigini dogrular
-    And kullanici sisteme "personel" olarak giris yapar
+    And kullanici sisteme "personell" olarak giris yapar
     Then kullanici yeni hasta kaydinin yapilamadigini dogrular
-    And kullanici sisteme "hasta" olarak giris yapar
+    And kullanici sisteme "hastaa" olarak giris yapar
     Then kullanici yeni hasta kaydinin yapilamadigini dogrular
 
   Scenario: Yonetici Ssn,Firstname,Lastname gibi tum hasta bilgilerini gorebilir
 
-    Given kullanici sisteme "admin" olarak giris yapar
+    Given kullanici sisteme "adminn" olarak giris yapar
     And kullanici Item&Title sekmesinden Patient elementine tiklar
     When kullanici Patients tablosundaki sutun basliklarini alir
     Then kullanici tum basliklarin gorunur oldugunu dogrular
