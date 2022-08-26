@@ -4,10 +4,7 @@ package utilities;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -145,6 +142,21 @@ public class ReusableMethods {
         });
         return element;
 
+
+    }
+    public static void clickWithJScript(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+    public static void selectAnItemFromDropdown(WebElement item, String selectableItem) {
+        waitFor(2);
+        Select select = new Select(item);
+        for (int i = 0; i < select.getOptions().size(); i++) {
+            if (select.getOptions().get(i).getText().equalsIgnoreCase(selectableItem)) {
+                select.getOptions().get(i).click();
+                break;
+            }
+        }
 
     }
 }
