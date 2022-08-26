@@ -6,7 +6,7 @@
 .settings/
 .classpath
 .project
-
+.idea
 
 # Created by https://www.gitignore.io/api/macos,java,windows,intellij,intellij+iml,maven
 
