@@ -77,11 +77,15 @@ public class AdminPage {
 
 
 
-
-
    // Seyfullah  80-159
+   @FindBy(xpath = "//li[@id='entity-menu']")
+   public WebElement itemsTitlesDropdownButon;
 
+    @FindBy(xpath = "//span[text()='Patient']")
+    public WebElement itemsTitlesPatientButon;
 
+    @FindBy(id = "cancel-save")
+    public WebElement createPatientBackButon;
 
 
 
@@ -153,13 +157,7 @@ public class AdminPage {
 
 
 
-
-
-
-
-
-
- // Ahmet 160-239
+    // Ahmet 160-239
 
 
 
@@ -317,7 +315,9 @@ public WebElement deleteHasta;
 
 
 
-    // Enes 320-399
+
+
+// Enes 320-399
 
 
 
