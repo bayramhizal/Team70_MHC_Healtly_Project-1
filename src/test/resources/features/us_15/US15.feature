@@ -23,18 +23,19 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
     And kullanici sisteme "hastaa" olarak giris yapar
     Then kullanici yeni hasta kaydinin yapilamadigini dogrular
 
-  Scenario: Yonetici Ssn,Firstname,Lastname gibi tum hasta bilgilerini gorebilir
+  Scenario : Yonetici Ssn,Firstname,Lastname gibi tum hasta bilgilerini gorebilir
 
     Given kullanici sisteme "adminn" olarak giris yapar
     And kullanici Item&Title sekmesinden Patient elementine tiklar
-    When kullanici Patients tablosundaki sutun basliklarini alir
-    Then kullanici tum basliklarin gorunur oldugunu dogrular
-    And kullanici tum hasta bilgilerini dogrular
+    When kullanici "ID" basliginin oldugunu dogrulanir
+    When kullanici "SSN" basliginin oldugunu dogrulanir
+    When kullanici "First Name" basliginin oldugunu dogrulanir
+    When kullanici "Last Name" basliginin oldugunu dogrulanir
+    Then kullanici tum basliklarin gorunur ve erisilebilir oldugunu dogrular
+
+
+
+
 
   Scenario: Hasta olusturuldugunda ogelere data girisi yapabilmeli
-
-
-
-
-
   Scenario: Hasta guncellendiginde ogelere data girisi yapabilmeli

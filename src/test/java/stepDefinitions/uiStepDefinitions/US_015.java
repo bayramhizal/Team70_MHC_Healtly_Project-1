@@ -52,7 +52,7 @@ public class US_015 {
 
     @Then("kullanici Create a new Patient sekmesinin gorunur oldugunu dogrular")
     public void kullaniciCreateANewPatientSekmesininGorunurOldugunuDogrular() {
-        soft.assertTrue(admin.createANewButton.isDisplayed() , "create butonu gorulemiyor");
+       soft.assertTrue(admin.createANewButton.isDisplayed() , "create butonu gorulemiyor");
     }
 
     @Then("kullanici Create a new Patient sekmesinin erisilebilir oldugunu dogrular")
@@ -67,7 +67,7 @@ public class US_015 {
 
     @Then("kullanici hasta olusturma sayfasina yonlendirildigini dogrular")
     public void kullaniciHastaOlusturmaSayfasinaYonlendirildiginiDogrular() {
-        soft.assertEquals ( Driver.getDriver().getCurrentUrl(), ConfigReader.getProperty("createpatientsayfasi") );
+       soft.assertEquals ( Driver.getDriver().getCurrentUrl(), ConfigReader.getProperty("createpatientsayfasi") );
     }
 
     @And("kullanici altta bulunan back butonuna tiklar ve Patient sayfasina doner")
@@ -76,9 +76,9 @@ public class US_015 {
        js.executeScript("arguments[0].scrollIntoView()", admin.createPatientBackButon);
        js.executeScript("arguments[0].click();", admin.createPatientBackButon);
         waitFor(3);
-        admin.createPatientBackButon.click();
-        soft.assertEquals(Driver.getDriver().getCurrentUrl() , ConfigReader.getProperty("patienttablosayfasi"));
-        soft.assertAll();
+        //admin.createPatientBackButon.click();
+       soft.assertEquals(Driver.getDriver().getCurrentUrl() , ConfigReader.getProperty("patienttablosayfasi"));
+       soft.assertAll();
     }
 
     @Then("kullanici yeni hasta kaydinin yapilamadigini dogrular")
@@ -94,16 +94,27 @@ public class US_015 {
 
     }
 
-    @When("kullanici Patients tablosundaki sutun basliklarini alir")
-    public void kullaniciPatientsTablosundakiSutunBasliklariniAlir() {
+
+    @When("kullanici Patients tablosundaki sutun basliklarinin {string} oldugunu dogrular")
+    public void kullaniciPatientsTablosundakiSutunBasliklarininOldugunuDogrular(String hastaBilgisi) {
+
+
     }
 
-    @Then("kullanici tum basliklarin gorunur oldugunu dogrular")
-    public void kullaniciTumBasliklarinGorunurOldugunuDogrular() {
+    @Then("kullanici tum basliklarin gorunur ve erisilebilir oldugunu dogrular")
+    public void kullaniciTumBasliklarinGorunurVeErisilebilirOldugunuDogrular() {
+
+
     }
 
-    @And("kullanici tum hasta bilgilerini dogrular")
-    public void kullaniciTumHastaBilgileriniDogrular() {
+
+    @When("kullanici {string} basliginin oldugunu dogrulanir")
+    public void kullaniciBasligininOldugunuDogrulanir(String arg0) {
+
+
+       Assert.assertTrue( admin.hastaBilgileriSutunBasliklari.contains(arg0) );
+
+
     }
 
 
