@@ -14,7 +14,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
     Then kullanici hasta olusturma sayfasina yonlendirildigini dogrular
     And kullanici altta bulunan back butonuna tiklar ve Patient sayfasina doner
 
-  Scenario Outline: Diger kullanicilar tarafindan yeni hasta olusturulamaz
+  Scenario Outline: Diger kullanicilar tarafindan yeni hasta olusturulamaz - NegatifTest
 
     Given kullanici sisteme "<kullaniciGiris>" olarak giris yapar
     Then kullanici yeni hasta kaydinin yapilamadigini dogrular
@@ -51,14 +51,81 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
 
 
   Scenario: Hasta olusturuldugunda ogelere data girisi yapabilmeli
-
-
-
-
-
-
-
-
-
+    
+    Given kullanici sisteme "adminn" olarak giris yapar
+    And kullanici Item&Title sekmesinden Patient elementine tiklar
+    When kullanici Create a new Patient sekmesine tiklar
+    And kullanici hasta first name kutucugunu doldurur
+    And kullanici hasta last name kutucugunu doldurur
+    And kullanici hasta birth date kutucugunu doldurur
+    And kullanici hasta email kutucugunu doldurur
+    And kullanici hasta phone kutucugunu doldurur
+    And kullanici hasta gender dropdown menusunden cinsiyet secer
+    And kullanici hasta blood group dropdown menusunden kan grubu secer
+    And kullanici hasta address kutucugunu doldurur
+    And kullanici hasta description kutucugunu doldurur
+    And kullanici hasta user dropdown menusunden kullanici secer
+    And kullanici hasta country dropdown menusunden ulke secer
+    And kullanici hasta state dropdown menusunden sehir secer
+    Then kullanici edit a Patient sayfasinda Save butonuna basar
+    Then kullanici A Patient is created yazisinin goruldugunu dogrular
 
   Scenario: Hasta guncellendiginde ogelere data girisi yapabilmeli
+
+    Given kullanici sisteme "adminn" olarak giris yapar
+    And kullanici Item&Title sekmesinden Patient elementine tiklar
+    When kullanici Patients tablosundaki hastanin Edit butonuna tiklar
+    And kullanici hasta first name kutucugunu doldurur
+    And kullanici hasta last name kutucugunu doldurur
+    And kullanici hasta birth date kutucugunu doldurur
+    And kullanici hasta email kutucugunu doldurur
+    And kullanici hasta phone kutucugunu doldurur
+    And kullanici hasta gender dropdown menusunden cinsiyet secer
+    And kullanici hasta blood group dropdown menusunden kan grubu secer
+    And kullanici hasta address kutucugunu doldurur
+    And kullanici hasta description kutucugunu doldurur
+    And kullanici hasta user dropdown menusunden kullanici secer
+    And kullanici hasta country dropdown menusunden ulke secer
+    And kullanici hasta state dropdown menusunden sehir secer
+    Then kullanici edit a Patient sayfasinda Save butonuna basar
+    Then kullanici A Patient is updated yazisinin goruldugunu dogrular
+
+
+    Scenario: Hastaya doktoru sadece Admin atayabilir
+
+      Given kullanici sisteme "adminn" olarak giris yapar
+      And kullanici Item&Title sekmesinden Patient elementine tiklar
+      When kullanici Patients tablosundaki hastanin Edit butonuna tiklar
+      Then kullanici doktor atama sekmesini bulur ve Adminin doktor atamasi yapabildigini test eder
+
+
+    Scenario:  "State", "US state" olmali ve bos birakilmamali
+
+
+
+
+    Scenario: "State", "US state" olmali ve bos birakilmamali - NegatifTest
+
+
+
+
+
+     Scenario: Yonetici herhangi bir hastayi silebilir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
