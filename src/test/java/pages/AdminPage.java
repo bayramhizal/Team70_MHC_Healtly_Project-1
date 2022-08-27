@@ -90,50 +90,50 @@ public class AdminPage {
     @FindBy(xpath = "/html/body/div/div/div/div[4]/div/div/div/div/div[1]/div/table/thead/tr/th")
     public List <WebElement> hastaBilgileriSutunBasliklari;
 
+    @FindBy(xpath = "//input[@name='firstName']" )
+    public WebElement patientFirstName;
 
+    @FindBy(xpath = "//input[@name='lastName']" )
+    public WebElement patientLastName;
 
+    @FindBy(xpath = "//input[@name='birthDate']" )
+    public WebElement patientBirthDate;
 
+    @FindBy(xpath = "//input[@name='email']" )
+    public WebElement patientEmail;
 
+    @FindBy(xpath = "//select[@name='gender']" )
+    public WebElement patientGender;
 
+    @FindBy(xpath = "//select[@name='bloodGroup']" )
+    public WebElement patientBloodGroup;
 
+    @FindBy(xpath = "//input[@name='adress']" )
+    public WebElement patientAdress;
 
+    @FindBy(xpath = "//textarea[@name='description']" )
+    public WebElement patientDescription;
 
+    @FindBy(xpath = "//select[@name='user.id']" )
+    public WebElement patientUserSelect;
 
+    @FindBy(xpath = "//select[@name='country.id']" )
+    public WebElement patientCountry;
 
+    @FindBy(xpath = "//select[@name='cstate.id']" )
+    public WebElement patientStateCity;
 
+    @FindBy (xpath = "//button[@type=\"submit\"]")
+    public WebElement patientSaveButtonn;
 
+    @FindBy (xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
+    public WebElement patientEditButtonn;
 
+    @FindBy (xpath = "//div[@class='Toastify__toast Toastify__toast--success toastify-toast']")
+    public WebElement alertYazisiGenel;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//input[@name='phone']" )
+    public WebElement patientPhone;
 
 
 

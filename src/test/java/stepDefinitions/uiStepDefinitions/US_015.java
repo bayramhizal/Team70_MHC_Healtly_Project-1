@@ -18,6 +18,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class US_015 {
     Select select;
     Faker faker;
     JavascriptExecutor js;
+    DateTimeFormatter date;
     SoftAssert soft=new SoftAssert();
 
 
@@ -94,19 +96,16 @@ public class US_015 {
             medunna.accountMenu.click();
             medunna.signOut.click();
         }
-
     }
 
 
     @Then("kullanici tum basliklarin gorunur ve erisilebilir oldugunu dogrular")
     public void kullaniciTumBasliklarinGorunurVeErisilebilirOldugunuDogrular() {
-
         for (WebElement e:admin.hastaBilgileriSutunBasliklari
              ) {
             Assert.assertTrue(e.isDisplayed());
             Assert.assertTrue(e.isEnabled());
         }
-
     }
 
 
@@ -120,7 +119,6 @@ public class US_015 {
             hastaBilgileriTumSutunBasliklari.add(e.getText().toString() );
         }
 
-       // Assert.assertTrue( hastaBilgileriTumSutunBasliklari.contains(hastaBilgisi) );
 
         try {
             Assert.assertTrue( hastaBilgileriTumSutunBasliklari.contains(hastaBilgisi) );
@@ -131,20 +129,122 @@ public class US_015 {
         }
 
 
+    }
+
+
+    @And("kullanici hasta first name kutucugunu doldurur")
+    public void kullaniciHastaFirstNameKutucugunuDoldurur() {
+        faker=new Faker();
+        admin.patientFirstName.sendKeys(faker.name().firstName());
+    }
+
+    @And("kullanici hasta last name kutucugunu doldurur")
+    public void kullaniciHastaLastNameKutucugunuDoldurur() {
+        faker=new Faker();
+        admin.patientLastName.sendKeys(faker.name().lastName());
+    }
+
+    @And("kullanici hasta birth date kutucugunu doldurur")
+    public void kullaniciHastaBirthDateKutucugunuDoldurur() {
+        faker=new Faker();
+        //date=DateTimeFormatter.ofPattern(ConfigReader.getProperty("birthDate"));
+        admin.patientBirthDate.sendKeys( ConfigReader.getProperty("birthDatee") ,
+                Keys.TAB, ConfigReader.getProperty("birthDateTimee") , Keys.TAB,Keys.DELETE );
+    }
+
+    @And("kullanici hasta email kutucugunu doldurur")
+    public void kullaniciHastaEmailKutucugunuDoldurur() {
+        faker=new Faker();
+        admin.patientEmail.sendKeys(faker.internet().emailAddress() , Keys.TAB,Keys.DELETE );
+    }
+
+    @And("kullanici hasta phone kutucugunu doldurur")
+    public void kullaniciHastaPhoneKutucugunuDoldurur() {
+        faker=new Faker();
+        admin.patientPhone.sendKeys(faker.phoneNumber().subscriberNumber(10));
+    }
+
+    @And("kullanici hasta gender dropdown menusunden cinsiyet secer")
+    public void kullaniciHastaGenderDropdownMenusundenCinsiyetSecer() {
+        faker=new Faker();
+        select=new Select(admin.patientGender);
+        select.selectByIndex(faker.random().nextInt(0 , 2));
+
+    }
+
+    @And("kullanici hasta blood group dropdown menusunden kan grubu secer")
+    public void kullaniciHastaBloodGroupDropdownMenusundenKanGrubuSecer() {
+        faker=new Faker();
+        select=new Select(admin.patientBloodGroup);
+        select.selectByIndex(faker.random().nextInt(0,7));
+    }
+
+    @And("kullanici hasta address kutucugunu doldurur")
+    public void kullaniciHastaAddressKutucugunuDoldurur() {
+        faker=new Faker();
+        admin.patientAdress.sendKeys(faker.address().fullAddress());
+    }
+
+    @And("kullanici hasta description kutucugunu doldurur")
+    public void kullaniciHastaDescriptionKutucugunuDoldurur() {
+        faker=new Faker();
+        admin.patientDescription.sendKeys(faker.business().creditCardType() );
+    }
+
+    @And("kullanici hasta user dropdown menusunden kullanici secer")
+    public void kullaniciHastaUserDropdownMenusundenKullaniciSecer() {
+        faker=new Faker();
+        select=new Select(admin.patientUserSelect);
+        select.selectByIndex(faker.random().nextInt(0,11));
+    }
+
+    @And("kullanici hasta country dropdown menusunden ulke secer")
+    public void kullaniciHastaCountryDropdownMenusundenUlkeSecer() {
+        faker=new Faker();
+        select=new Select(admin.patientCountry);
+        select.selectByValue("80065");
+        // diger USA Value = 238484
+    }
+
+    @And("kullanici hasta state dropdown menusunden sehir secer")
+    public void kullaniciHastaStateDropdownMenusundenSehirSecer() {
+        faker=new Faker();
+        select=new Select(admin.patientStateCity);
+        waitFor(2);
+        //select.selectByVisibleText("California");
+        // select.selectByValue("43522");
+        select.selectByIndex(faker.random().nextInt(1));
+        waitFor(2);
 
     }
 
 
+    @Then("kullanici A Patient is created yazisinin goruldugunu dogrular")
+    public void kullaniciAPatientIsCreatedYazisininGoruldugunuDogrular() {
+            Assert.assertTrue( admin.alertYazisiGenel.isDisplayed() );
+            waitFor(2);
+    }
+
+    @When("kullanici Patients tablosundaki hastanin Edit butonuna tiklar")
+    public void kullaniciPatientsTablosundakiHastaninEditButonunaTiklar() {
+        admin.patientEditButtonn.click();
+    }
 
 
+    @Then("kullanici edit a Patient sayfasinda Save butonuna basar")
+    public void kullaniciEditAPatientSayfasindaSaveButonunaBasar() {
+            js = (JavascriptExecutor) Driver.getDriver();
+            js.executeScript("arguments[0].click();", admin.patientSaveButtonn);
+    }
+
+    @Then("kullanici A Patient is updated yazisinin goruldugunu dogrular")
+    public void kullaniciAPatientIsUpdatedYazisininGoruldugunuDogrular() {
+        Assert.assertTrue( admin.alertYazisiGenel.isDisplayed() );
+        waitFor(2);
+    }
 
 
-
-
-
-
-
-
-
-
+    @Then("kullanici doktor atama sekmesini bulur ve Adminin doktor atamasi yapabildigini test eder")
+    public void kullaniciDoktorAtamaSekmesiniBulurVeAdmininDoktorAtamasiYapabildiginiTestEder() {
+    }
 }
