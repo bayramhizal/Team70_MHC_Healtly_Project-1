@@ -87,8 +87,8 @@ public class AdminPage {
     @FindBy(id = "cancel-save")
     public WebElement createPatientBackButon;
 
-
-
+    @FindBy(xpath = "/html/body/div/div/div/div[4]/div/div/div/div/div[1]/div/table/thead/tr/th")
+    public List <WebElement> hastaBilgileriSutunBasliklari;
 
 
 
