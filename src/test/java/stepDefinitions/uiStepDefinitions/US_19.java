@@ -46,6 +46,8 @@ public class US_19 {
     public void kullanici_acilan_sayfada_ssn_kutusuna_gecerli_staff_bilgisini_girer(String string) {
         AdminPage adminPage=new AdminPage();
         Actions actions=new Actions(Driver.getDriver());
+
+        ReusableMethods.waitFor(2);
     actions.click(adminPage.ssnSearch).sendKeys(ConfigReader.getProperty("createeSSN")).perform();
 
     }
