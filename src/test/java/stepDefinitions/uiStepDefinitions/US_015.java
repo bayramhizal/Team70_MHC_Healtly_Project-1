@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
@@ -17,6 +18,8 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static utilities.ReusableMethods.waitFor;
 
@@ -75,8 +78,7 @@ public class US_015 {
        js = (JavascriptExecutor) Driver.getDriver();
        js.executeScript("arguments[0].scrollIntoView()", admin.createPatientBackButon);
        js.executeScript("arguments[0].click();", admin.createPatientBackButon);
-        waitFor(3);
-        //admin.createPatientBackButon.click();
+       waitFor(3);
        soft.assertEquals(Driver.getDriver().getCurrentUrl() , ConfigReader.getProperty("patienttablosayfasi"));
        soft.assertAll();
     }
@@ -85,9 +87,10 @@ public class US_015 {
     public void kullaniciYeniHastaKaydininYapilamadiginiDogrular() {
 
         try {
-            Assert.assertFalse( "buton gorunur",admin.createANewButton.isDisplayed());
-            Assert.assertFalse( "buton erisilir",admin.createANewButton.isEnabled());
+            Assert.assertTrue( "buton gorunur",admin.createANewButton.isDisplayed());
+            Assert.assertTrue( "buton erisilir",admin.createANewButton.isEnabled());
         } catch (Exception e ) {
+            System.out.println("create a new patient butonu gozukmediginden hasta kaydı yapılamadı");
             medunna.accountMenu.click();
             medunna.signOut.click();
         }
@@ -95,27 +98,53 @@ public class US_015 {
     }
 
 
-    @When("kullanici Patients tablosundaki sutun basliklarinin {string} oldugunu dogrular")
-    public void kullaniciPatientsTablosundakiSutunBasliklarininOldugunuDogrular(String hastaBilgisi) {
-
-
-    }
-
     @Then("kullanici tum basliklarin gorunur ve erisilebilir oldugunu dogrular")
     public void kullaniciTumBasliklarinGorunurVeErisilebilirOldugunuDogrular() {
 
+        for (WebElement e:admin.hastaBilgileriSutunBasliklari
+             ) {
+            Assert.assertTrue(e.isDisplayed());
+            Assert.assertTrue(e.isEnabled());
+        }
 
     }
 
 
-    @When("kullanici {string} basliginin oldugunu dogrulanir")
-    public void kullaniciBasligininOldugunuDogrulanir(String arg0) {
+    @When("kullanici {string} basliginin oldugunu dogrular")
+    public void kullaniciBasligininOldugunuDogrular(String hastaBilgisi) {
 
+        List<String> hastaBilgileriTumSutunBasliklari=new ArrayList<>();
 
-       Assert.assertTrue( admin.hastaBilgileriSutunBasliklari.contains(arg0) );
+        for (WebElement e:admin.hastaBilgileriSutunBasliklari
+             ) {
+            hastaBilgileriTumSutunBasliklari.add(e.getText().toString() );
+        }
+
+       // Assert.assertTrue( hastaBilgileriTumSutunBasliklari.contains(hastaBilgisi) );
+
+        try {
+            Assert.assertTrue( hastaBilgileriTumSutunBasliklari.contains(hastaBilgisi) );
+        } catch (Exception e ) {
+            js = (JavascriptExecutor) Driver.getDriver();
+            js.executeScript("arguments[0].scrollIntoView()", admin.hastaBilgileriSutunBasliklari);
+            System.out.println("Web Element bulunamadı");
+        }
+
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
