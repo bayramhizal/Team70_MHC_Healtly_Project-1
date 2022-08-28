@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import stepDefinitions.uiStepDefinitions.US_27;
 import utilities.Driver;
 
 import java.util.List;
@@ -398,8 +399,8 @@ public WebElement deleteHasta;
 
 
 //Kadir 400-450
-@FindBy(xpath = "(//a[@href=\"/c-message\"])[2]")
-public WebElement messageButton;
+    @FindBy(xpath = "(//a[@href=\"/c-message\"])[2]")
+    public WebElement messageButton;
 
     @FindBy(xpath = "//span[text()='Create a new Message']")
     public WebElement createANewMessageButton;
@@ -428,18 +429,17 @@ public WebElement messageButton;
     @FindBy(xpath = "//input[@id='c-message-name']")
     public WebElement createMessagePageNameButton;
 
+    @FindBy(xpath = "(//a[@href=\"/c-message/237815\"])[2]")
+    public WebElement createdMessageViewButton;
 
+    @FindBy(xpath = "//input[@id='c-message-name']")
+    public WebElement editMessageNameButton;
 
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement messagesPageMessageEditAlertYazi;
 
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//a[@href=\"/c-message/240263/delete\"]")
+    public WebElement createdMessageDeleteButton;
 
 
 
