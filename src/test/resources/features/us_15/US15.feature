@@ -96,7 +96,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
       Given kullanici sisteme "adminn" olarak giris yapar
       And kullanici Item&Title sekmesinden Patient elementine tiklar
       When kullanici Patients tablosundaki hastanin Edit butonuna tiklar
-      Then kullanici doktor atama sekmesini bulur ve Adminin doktor atamasi yapabildigini test eder
+      Then kullanici doktor atama sekmesini bulur ve doktor atamasi yapilabildigini test eder
 
 
     Scenario:  "State", "US state" olmali ve bos birakilmamali
