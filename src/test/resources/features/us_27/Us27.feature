@@ -20,7 +20,7 @@ Feature: US27 Messages by Admin Validate with API and DB
     And Kullanici olusturulan mesajin kaydedildigini kontrol eder
     And Kullanıcı olusturdugu mesajin uzerine gelerek viev tusuna basarak mesajin goruntulendigini kontrol eder
     And Kullanici olusturdugu mesajin uzerindeki edit tusuna basarak mesaji guncelleyebilmeli
-    And Kullanici olusturdugu mesajin uzerindeki delete tusuna basarak mesaji guncelleyebilmeli
+    And Kullanici olusturdugu mesajin uzerindeki delete tusuna basarak mesaji silebilmeli
 
 
 
