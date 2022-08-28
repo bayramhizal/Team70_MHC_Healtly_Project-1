@@ -101,24 +101,54 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
 
     Scenario:  "State", "US state" olmali ve bos birakilmamali
 
+      Given kullanici sisteme "adminn" olarak giris yapar
+      And kullanici Item&Title sekmesinden Patient elementine tiklar
+      When kullanici Create a new Patient sekmesine tiklar
+      And kullanici hasta first name kutucugunu doldurur
+      And kullanici hasta last name kutucugunu doldurur
+      And kullanici hasta birth date kutucugunu doldurur
+      And kullanici hasta email kutucugunu doldurur
+      And kullanici hasta phone kutucugunu doldurur
+      And kullanici hasta gender dropdown menusunden cinsiyet secer
+      And kullanici hasta blood group dropdown menusunden kan grubu secer
+      And kullanici hasta address kutucugunu doldurur
+      And kullanici hasta description kutucugunu doldurur
+      And kullanici hasta user dropdown menusunden kullanici secer
+      And kullanici hasta country dropdown menusunden ulke secer
+      And kullanici hasta state dropdown menusunden sehir secer
+      Then kullanici edit a Patient sayfasinda Save butonuna basar
+      Then kullanici A Patient is created yazisinin goruldugunu dogrular
 
 
 
     Scenario: "State", "US state" olmali ve bos birakilmamali - NegatifTest
 
-
+      Given kullanici sisteme "adminn" olarak giris yapar
+      And kullanici Item&Title sekmesinden Patient elementine tiklar
+      When kullanici Create a new Patient sekmesine tiklar
+      And kullanici hasta first name kutucugunu doldurur
+      And kullanici hasta last name kutucugunu doldurur
+      And kullanici hasta birth date kutucugunu doldurur
+      And kullanici hasta email kutucugunu doldurur
+      And kullanici hasta phone kutucugunu doldurur
+      And kullanici hasta gender dropdown menusunden cinsiyet secer
+      And kullanici hasta blood group dropdown menusunden kan grubu secer
+      And kullanici hasta address kutucugunu doldurur
+      And kullanici hasta description kutucugunu doldurur
+      And kullanici hasta user dropdown menusunden kullanici secer
+      And kullanici hasta country dropdown menusunu bos birakir
+      And kullanici hasta state dropdown menusunu bos birakir
+      Then kullanici edit a Patient sayfasinda Save butonuna basar
+      Then kullanici A Patient is created yazisinin gorulmedigini dogrular
 
 
 
      Scenario: Yonetici herhangi bir hastayi silebilir
 
-
-
-
-
-
-
-
+       Given kullanici sisteme "adminn" olarak giris yapar
+       And kullanici Item&Title sekmesinden Patient elementine tiklar
+       When kullanici Patients tablosundaki hastanin Delete butonuna tiklar
+       Then kullanici A Patient is deleted yazisinin goruldugunu dogrular
 
 
 
