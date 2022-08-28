@@ -2,8 +2,23 @@
 
 Feature: Admin tarafindan silinen Staff kayitlarini DB  ile dogrulama
 
-  Scenario: DB ile dogrulama
+  Scenario Outline: DB ile dogrulama
 
-Given Kullanici Medunna veri tabanina baglanir
-Then Kullanici Staff tablosundaki verilerini alir
-And Staff tablosunda silinen "staff" bilgisini kontrol eder
+  Given Kullanici Medunna veri tabanina baglanir
+  Then Kullanici "staff" tablosundaki verilerini alir
+  And  staff tablosunda silinen "<id>" bilgisini kontrol eder
+  And Baglantiyi sonlandir
+
+
+    Examples:
+
+      |id    |
+      |214867|
+
+
+
+
+
+
+
+
