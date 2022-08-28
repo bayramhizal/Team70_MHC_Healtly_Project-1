@@ -22,6 +22,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utilities.ReusableMethods.clickWithJScript;
 import static utilities.ReusableMethods.waitFor;
 
 public class US_015 {
@@ -200,22 +201,28 @@ public class US_015 {
 
     @And("kullanici hasta country dropdown menusunden ulke secer")
     public void kullaniciHastaCountryDropdownMenusundenUlkeSecer() {
-        faker=new Faker();
+
         select=new Select(admin.patientCountry);
         select.selectByValue("80065");
         // diger USA Value = 238484
+        select.getFirstSelectedOption().click();
     }
 
     @And("kullanici hasta state dropdown menusunden sehir secer")
     public void kullaniciHastaStateDropdownMenusundenSehirSecer() {
-        faker=new Faker();
-        select=new Select(admin.patientStateCity);
-        waitFor(2);
-        //select.selectByVisibleText("California");
-        // select.selectByValue("43522");
-        select.selectByIndex(faker.random().nextInt(1));
-        waitFor(2);
 
+        select=new Select(admin.patientStateCity);
+
+        try {
+            select.selectByValue("43522");
+        } catch (Exception e) {
+            try{
+                select.selectByVisibleText("California");
+            } catch (Exception f ){
+                select.selectByIndex(0);
+            }
+        }
+        waitFor(1);
     }
 
 
@@ -259,6 +266,49 @@ public class US_015 {
                            hastaDuzenlemeBilgileriBasliklari.contains("Physician"));
 
 
+
+    }
+
+    @And("kullanici hasta country dropdown menusunu bos birakir")
+    public void kullaniciHastaCountryDropdownMenusunuBosBirakir() {
+
+       // action=new Actions(Driver.getDriver());
+       // action.click(admin.patientCountry).perform();
+           clickWithJScript(admin.patientCountry);
+
+    }
+
+    @And("kullanici hasta state dropdown menusunu bos birakir")
+    public void kullaniciHastaStateDropdownMenusunuBosBirakir() {
+       //    action=new Actions(Driver.getDriver());
+         // action.click(admin.patientStateCity).perform();
+
+        clickWithJScript(admin.patientStateCity);
+
+    }
+
+    @Then("kullanici A Patient is created yazisinin gorulmedigini dogrular")
+    public void kullaniciAPatientIsCreatedYazisininGorulmediginiDogrular() {
+
+        Assert.assertFalse("Alert yazisi gorunur,Patient kaydi yapildi",admin.alertYazisiGenel.isDisplayed());
+        Assert.assertFalse( "Alert yazisi erisilebilir,Patient kaydi yapildi",admin.alertYazisiGenel.isEnabled());
+
+    }
+
+
+    @When("kullanici Patients tablosundaki hastanin Delete butonuna tiklar")
+    public void kullaniciPatientsTablosundakiHastaninDeleteButonunaTiklar() {
+
+        admin.patientDeleteButtonn.click();
+        admin.patientDeleteConfirmButtonn.click();
+
+    }
+
+    @Then("kullanici A Patient is deleted yazisinin goruldugunu dogrular")
+    public void kullaniciAPatientIsDeletedYazisininGoruldugunuDogrular() {
+
+      //  Assert.assertFalse( "Internal Server hatasi" ,admin.deleteAlertErrorYazisi.isDisplayed()  );
+        Assert.assertTrue("A Patient is Deleted yazisi gorunmuyor",admin.deleteAlertSuccessYazisi.isEnabled());
 
     }
 
