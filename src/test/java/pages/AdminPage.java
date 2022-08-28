@@ -77,8 +77,7 @@ public class AdminPage {
 
 
 
-
-   // Seyfullah  80-159
+    // Seyfullah  80-159
    @FindBy(xpath = "//li[@id='entity-menu']")
    public WebElement itemsTitlesDropdownButon;
 
@@ -136,8 +135,8 @@ public class AdminPage {
     @FindBy(xpath = "//input[@name='phone']" )
     public WebElement patientPhone;
 
-
-
+    @FindBy(xpath="//div/label")
+    public List <WebElement> hastaDuzenlemeBilgileriSutunBasliklari;
 
 
 

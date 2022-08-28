@@ -244,7 +244,22 @@ public class US_015 {
     }
 
 
-    @Then("kullanici doktor atama sekmesini bulur ve Adminin doktor atamasi yapabildigini test eder")
-    public void kullaniciDoktorAtamaSekmesiniBulurVeAdmininDoktorAtamasiYapabildiginiTestEder() {
+    @Then("kullanici doktor atama sekmesini bulur ve doktor atamasi yapilabildigini test eder")
+    public void kullaniciDoktorAtamaSekmesiniBulurVeDoktorAtamasiYapilabildiginiTestEder() {
+
+
+        List<String> hastaDuzenlemeBilgileriBasliklari=new ArrayList<>();
+
+        for (WebElement e:admin.hastaDuzenlemeBilgileriSutunBasliklari
+        ) {
+            hastaDuzenlemeBilgileriBasliklari.add( e.getText() );
+        }
+
+        Assert.assertTrue( "Hastaya doktor atamasi icin bir sekme bulunamadi",
+                           hastaDuzenlemeBilgileriBasliklari.contains("Physician"));
+
+
+
     }
+
 }
