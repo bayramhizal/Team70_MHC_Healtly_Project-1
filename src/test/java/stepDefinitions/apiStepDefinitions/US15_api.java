@@ -173,11 +173,16 @@ public class US15_api {
 
 
     @And("Admin olusturdugu hastayi siler ve {int} kodu ile silindigini dogrular")
-    public void adminOlusturduguHastayiSilerVeKoduIleSilindiginiDogrular(int arg0) {
+    public void adminOlusturduguHastayiSilerVeKoduIleSilindiginiDogrular(int kod) {
 
 
+        response=given()
+                .headers("Authorization",
+                          "Bearer " + generateToken("adminmerdan" , "123456"))
+                .when()
+                .delete("https://medunna.com/api/patients/" + actualDataMap.get("id"));
 
-
+        response.then().assertThat().statusCode(kod);
 
 
 
