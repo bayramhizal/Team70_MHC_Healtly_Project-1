@@ -3,6 +3,7 @@ package stepDefinitions.uiStepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -129,36 +130,45 @@ public class US_19 {
     }
 
     @And("Acilan pencerede {string} uyarisini gorur")
-    public void acilanPenceredeUyarisiniGorur(String arg0) {
+    public void acilanPenceredeUyarisiniGorur(String alert) {
 
         AdminPage adminPage=new AdminPage();
 
-        String expectedData="A Staff is updated with identifier";
-        String alert= adminPage.alertYazi2.getText().replaceAll("\\D","");
-        System.out.println(alert);
-        Assert.assertTrue(expectedData.contains(alert));
+
+        ReusableMethods.waitForVisibility(adminPage.alert,15);
+        System.out.println("adminPage.alert.getText() = " + adminPage.alert.getText());
+        Assert.assertTrue(adminPage.alert.getText().contains(alert));
+        String   alertID=adminPage.alert.getText().replaceAll("\\D","");
+        System.out.println("alertID = " + alertID);
     }
 
-    @And("Kullanici acilan sayfada herhangi bir kullanici icin {string} butonunanana basar")
-    public void kullaniciAcilanSayfadaHerhangiBirKullaniciIcinButonunananaBasar(String arg0) {
+
+    @And("Kullanici acilan sayfada herhangi bir kullanici icin delete butonuna basar")
+    public void kullaniciAcilanSayfadaHerhangiBirKullaniciIcinDeleteButonunaBasar() {
         AdminPage adminPage=new AdminPage();
-      //  Actions actions=new Actions(Driver.getDriver());
-      //  actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+        //  Actions actions=new Actions(Driver.getDriver());
+        //  actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
         adminPage.deleteButton.click();
 
-        ReusableMethods.waitFor(2);
-        adminPage.alertDeleteButoon.click();
+        // ReusableMethods.waitFor(2);
+        //  adminPage.alertDeleteButoon.click();
 
-        ReusableMethods.waitFor(2);
-    }
+        // ReusableMethods.waitFor(2);
 
-    @And("Acilan pencerede {string} uyarisininini gorur")
-    public void acilanPenceredeUyarisinininiGorur(String arg0) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
-        AdminPage adminPage=new AdminPage();
-        Assert.assertTrue(adminPage.alert3.isDisplayed());
-
-
+        ReusableMethods.waitForClickablility(adminPage.delete.get(adminPage.delete.size() - 1), 10);
+        js.executeScript("arguments[0].click();", adminPage.delete.get(adminPage.delete.size() - 1));
 
     }
+
+    //  @And("Acilan pencerede {string} uyarisininini gorur")
+  //  public void acilanPenceredeUyarisinininiGorur(String arg0) {
+//
+  //      AdminPage adminPage=new AdminPage();
+  //      Assert.assertTrue(adminPage.alert3.isDisplayed());
+//
+//
+//
+  //  }
 }

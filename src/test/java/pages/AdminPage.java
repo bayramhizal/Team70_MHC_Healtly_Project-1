@@ -66,8 +66,10 @@ public class AdminPage {
     public WebElement alert3;
     @FindBy (xpath = "//input[@name=\"firstName\"]")
     public WebElement staffFirstname;
-
-
+    @FindBy (xpath = "//div[@role='alert']")
+    public WebElement alert;
+    @FindBy (xpath = "//span[text()='Delete']")
+    public List<WebElement> delete;
 
 
 
