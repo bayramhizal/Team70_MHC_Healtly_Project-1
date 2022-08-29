@@ -40,5 +40,5 @@ Feature: US19 Admin olarak;Yeni Staff (Personel) Oluşturma / Güncelleme / Gör
 
   Scenario: TC04 Admin kullanıcı bilgilerini silebilir.
 
-    And Kullanici acilan sayfada herhangi bir kullanici icin "delete" butonuna basar
+    And Kullanici acilan sayfada herhangi bir kullanici icin delete butonuna basar
     And Acilan pencerede "A Staff is deleted with identifier" uyarisini gorur

@@ -37,7 +37,9 @@ public class US_19_API {
     public void adminURLESilmeIstegiGonderir() {
 
         response= ApiUtils.deleteRequest(Authentication.generateToken("DzKKaya","Sword1234."),
-                "https://medunna.com/api/staff/"+list.get(ThreadLocalRandom.current().nextInt(0,list.size())));
+                "https://medunna.com/api/staff/"+232999);
+
+                //list.get(ThreadLocalRandom.current().nextInt(0,list.size())));
 
 
     }
@@ -46,7 +48,11 @@ public class US_19_API {
     @Then("Admin silinen Staff bilgisini kontrol eder")
     public void admin_silinen_staff_bilgisini_kontrol_eder() {
 
+
+
         Map<String, Object> actualMap = response.as(HashMap.class);
+
+        //response bos olarak nasil gösterebiliriz.
 
 
         Assert.assertTrue(actualMap.size()==0);
@@ -58,4 +64,9 @@ public class US_19_API {
     }
 
 
+    @Then("Admin Status Code {int} oldugunu dogrular")
+    public void adminStatusCodeOldugunuDogrular(int stCode) {
+
+        response.then().assertThat().statusCode(stCode);
+    }
 }
