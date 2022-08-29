@@ -222,7 +222,7 @@ public class Patients {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(PatientsPut.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Patients.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("createdBy");
         sb.append('=');
         sb.append(((this.createdBy == null)?"<null>":this.createdBy));
