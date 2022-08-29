@@ -27,11 +27,12 @@ public class US15_api {
     RequestSpecification spec;
     Response response;
     Faker faker=new Faker();
-    PatientsPut patient=new PatientsPut();
+    Patients patient=new Patients();
     User user=new User();
     Cstate cstate=new Cstate();
     Country__1 country1=new Country__1();
     Country country=new Country();
+
     public static Map<String, Object> actualDataMap;
     Map<String, Object> expectedDataMap;
     public static Object id;
@@ -47,6 +48,18 @@ public class US15_api {
     @When("Admin hasta POST islemi icin expected data olusturur")
     public void adminHastaPOSTIslemiIcinExpectedDataOlusturur() {
 
+        user.setCreatedBy("anonymousUser");
+        user.setCreatedDate("2022-08-14T22:12:10.161166Z");
+        user.setFirstName(faker.name().firstName());
+        user.setLastName(faker.name().lastName());
+        user.setId(189436);
+        user.setLogin(faker.name().username());
+        user.setEmail(faker.internet().emailAddress());
+        user.setActivated(true);
+        user.setLangKey("en");
+        user.setSsn(faker.idNumber().ssnValid());
+
+
         patient.setFirstName(faker.name().firstName());
         patient.setLastName(faker.name().lastName());
         patient.setEmail(faker.internet().emailAddress());
@@ -56,6 +69,7 @@ public class US15_api {
         patient.setBloodGroup("Apositive");
         patient.setAdress(faker.address().streetAddress());
         patient.setDescription(faker.programmingLanguage().creator());
+        patient.setUser(user);
 
 
     }
@@ -89,7 +103,7 @@ public class US15_api {
     public void adminPOSTExpectedDataIleActualDataninAyniOldugunuDogrular() throws IOException {
 
         ObjectMapper obj = new ObjectMapper();
-        PatientsPut actualData=obj.readValue(response.asString() , PatientsPut.class);
+        Patients actualData=obj.readValue(response.asString() , Patients.class);
         Assert.assertEquals( patient.getFirstName() , actualData.getFirstName() );
         Assert.assertEquals(patient.getLastName() , actualData.getLastName());
         Assert.assertEquals(patient.getEmail() , actualData.getEmail());
@@ -124,7 +138,36 @@ public class US15_api {
 
 
     @And("Admin ID no ile PUT yaparak olusturdugu hastayi gunceller ve {int} Status kodunu alir")
-    public void adminIDNoIlePUTYaparakOlusturduguHastayiGuncellerVeStatusKodunuAlir(int arg0) {
+    public void adminIDNoIlePUTYaparakOlusturduguHastayiGuncellerVeStatusKodunuAlir(int kod) {
+
+
+        patient.setId((Integer) actualDataMap.get("id"));
+        patient.setLastName(faker.name().lastName());
+        patient.setEmail(faker.internet().emailAddress());
+        patient.setPhone(faker.phoneNumber().subscriberNumber(10));
+        patient.setGender("FEMALE");
+        patient.setBirthDate("1995-05-05T10:55:00Z");
+        patient.setBloodGroup("Bpositive");
+        patient.setAdress(faker.address().streetAddress());
+        patient.setDescription(faker.programmingLanguage().creator());
+
+
+        response=given()
+                .headers("Authorization",
+                        "Bearer " + generateToken("adminmerdan" , "123456"))
+                .contentType(ContentType.JSON)
+                .spec(spec)
+                .body(patient)
+                .when()
+                .put("/{ilk}/{ikinci}");
+        response.prettyPrint();
+
+
+        Assert.assertEquals( "hatalı kod", kod , response.getStatusCode() );
+
+
+
+
 
     }
 
@@ -132,7 +175,22 @@ public class US15_api {
     @And("Admin olusturdugu hastayi siler ve {int} kodu ile silindigini dogrular")
     public void adminOlusturduguHastayiSilerVeKoduIleSilindiginiDogrular(int arg0) {
 
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
 
