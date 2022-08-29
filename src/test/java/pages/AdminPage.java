@@ -64,8 +64,8 @@ public class AdminPage {
     public WebElement alertDeleteButoon;
     @FindBy(xpath = "//div[text()=\"A Staff is deleted with identifier 211233\"]")
     public WebElement alert3;
-
-
+    @FindBy (xpath = "//input[@name=\"firstName\"]")
+    public WebElement staffFirstname;
 
 
 

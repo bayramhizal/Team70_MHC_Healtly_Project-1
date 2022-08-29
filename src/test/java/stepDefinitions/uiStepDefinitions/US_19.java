@@ -12,6 +12,10 @@ import utilities.Driver;
 import utilities.Methods;
 import utilities.ReusableMethods;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class US_19 {
 
 
@@ -74,7 +78,12 @@ public class US_19 {
     @Then("Kullanici girmis oldugu SSN bilgisine gore {string} bilgilerini dogrular")
     public void kullanici_girmis_oldugu_ssn_bilgisine_gore_bilgilerini_dogrular(String string) {
 
+        AdminPage adminPage=new AdminPage();
 
+        List<String> actualValue = new ArrayList<>(Arrays.asList(adminPage.staffFirstname.getAttribute("value"),adminPage.staffLastNameButton.getAttribute("value")));
+        List<String> expectedValue = new ArrayList<>(Arrays.asList("teamfifthone_9","team51_45"));
+
+        Assert.assertTrue(actualValue.containsAll(expectedValue));
 
     }
 
@@ -124,7 +133,10 @@ public class US_19 {
 
         AdminPage adminPage=new AdminPage();
 
-        Assert.assertTrue(adminPage.alertYazi2.isDisplayed());
+        String expectedData="A Staff is updated with identifier";
+        String alert= adminPage.alertYazi2.getText().replaceAll("\\D","");
+        System.out.println(alert);
+        Assert.assertTrue(expectedData.contains(alert));
     }
 
     @And("Kullanici acilan sayfada herhangi bir kullanici icin {string} butonunanana basar")
