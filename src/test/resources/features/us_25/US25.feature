@@ -1,4 +1,4 @@
-@US25
+@US25 @Regression
   Feature: New Appointment by patient
     Scenario: Patient make an appointment yourself
       Given User goes to medunna website for patient appointment

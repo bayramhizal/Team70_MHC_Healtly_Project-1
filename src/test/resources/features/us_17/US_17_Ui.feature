@@ -1,3 +1,4 @@
+@Regression
 Feature: ADMIN Test items(oge) Olustur, gunceller ve siler
 
   Background: Admin Test Item sayfasina ulasir
@@ -20,6 +21,7 @@ Feature: ADMIN Test items(oge) Olustur, gunceller ve siler
 #   And Admin Save tusuna basar acilan sayfada olusturdugu test Item'in bilgilerinin dogru oldugunu gorur
 # Bu senaryo icin Bug Ticket olusturuldu. Cunku Admin aktuel date disinda baska tarih ve saat giremiyor
 
+  @E2E
   Scenario: TC02 Admin yeni bir test item olusturabilir, guncelleyebilir ve silebilir
     Given Admin Create a new Test Item butonuna basar
     Then Admin "ZuckerUi","kurzeZeit", "200", "120", "145"  ve "date yazilmayacak" bilgilerini yazar

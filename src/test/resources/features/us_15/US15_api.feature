@@ -1,5 +1,5 @@
 
-
+@Regression @E2E
 Feature: Admin tarafindan hasta olusturma ve duzenleme
 
   Scenario: API ile hasta bilgilerini dogrulayin

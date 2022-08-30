@@ -1,7 +1,7 @@
-@US22_TC01
+@US22_TC01 @Regression
 Feature: US22_TC01
 
-  Scenario: Kullanici (Staff) hastanin SSN id ile arama yapabilir.
+  Scenario: US22_TC01 Kullanici (Staff) hastanin SSN id ile arama yapabilir.
 
     Given kullanici "medunnaUrl" e gider.
     Then kullanici Sign In butonunu bulur ve tiklar
@@ -9,10 +9,8 @@ Feature: US22_TC01
     And Kullanici MYPAGES butonu altinda ki Search Patient sekmmesine tiklar
     And Kullanici Patient SSN text box ina guncellemek istedigi hastanin ssn numarasini girer
 
-  @US22_TC02
-  Feature: US22_TC02
-
-  Scenario: Kullanici (Staff) test sonuclarını gorebilmelidir.
+  @Smoke
+  Scenario: US22_TC02 Kullanici (Staff) test sonuclarını gorebilmelidir.
 
     Given kullanici "medunnaUrl" e gider.
     Then kullanici Sign In butonunu bulur ve tiklar
@@ -23,10 +21,8 @@ Feature: US22_TC01
     And Kullanici show tests butonuna tiklar
     Then kullanici gelen sayfada view results butonuna tiklar
 
-  @US22_TC03
-  Feature: US22_TC03
-
-  Scenario: Kullanici (Staff) "ID, Date, Result, description, Created date, ..." gibi sonuc bilgileini gorebilmeli ve
+  @Smoke
+  Scenario: US22_TC03 Kullanici (Staff) "ID, Date, Result, description, Created date, ..." gibi sonuc bilgileini gorebilmeli ve
   guncelleyebilmelidir.
 
     Given kullanici "medunnaUrl" e gider.

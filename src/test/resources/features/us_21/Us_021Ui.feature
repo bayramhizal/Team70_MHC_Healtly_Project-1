@@ -1,4 +1,4 @@
-
+@Regression
 Feature: US_021 Staff hastalar için randevuları görür
 
   Background:US_021 Tekrar eden methodlar
@@ -10,7 +10,7 @@ Feature: US_021 Staff hastalar için randevuları görür
     And Kullanici cikan ekranda Show Appointments butonunu tiklar
     And Kullanici tekrar Edit butonuna tiklar
 
-
+  @Smoke
   Scenario:TC_01 Staff sadece randevuları güncelleyebilir.
     Given Kullanici Start date guncelleyebilir
     Then kullanici End date guncelleyebilir

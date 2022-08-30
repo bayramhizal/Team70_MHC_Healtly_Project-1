@@ -1,3 +1,4 @@
+@Regression
 Feature: DB ile sorgulama
 
   Scenario: Ulke id si ile sorgulamanin yapilmasi

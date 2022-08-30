@@ -1,4 +1,4 @@
-@E2E
+@E2E @Regression
 Feature: US_017 Admin API ile Test Items olusturabilmeli
 
   Scenario Outline: TC_03, 05, 06, 07  Admin API kullanarak POST, GET, PUT ve DELETE requestlerini test eder

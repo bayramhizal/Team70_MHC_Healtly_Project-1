@@ -1,4 +1,4 @@
-@E2E
+@E2E @Regression
 Feature: US017 ADMIN Test items(öğe) Oluştur, gunceller ve siler
 
 Background: TAdmin Data Base testi icin API kullanarak Test Item olusturur ve Database'de dogrular

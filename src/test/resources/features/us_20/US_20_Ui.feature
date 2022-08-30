@@ -1,3 +1,4 @@
+@Regression
 Feature: Admin; "User management" menusunden, kullanici Active eder ve gerekli rolleri olusturur.
 
   Background:
@@ -13,6 +14,7 @@ Feature: Admin; "User management" menusunden, kullanici Active eder ve gerekli r
     Given Admin kayitli kullanicilarin "ahmet","koru", "ahr@gsmail.com" gibi bilgilerini gorur
     Then Admin olusturdugu kullaniciyi siler
 
+  @Smoke
   Scenario: TC02 Admin kullanicilari aktive edebilir ve rollerini ADMIN, USER PATIENT, STAFF ve PHYSICIAN olarak atayabilir.
     Given Admin kullanicinin Activated kutucugunun secili oldugunu gorur
     When Admin kullanicinin Activated kutucuguna bir kez tiklar ve kutucugun secili olmadigini gorur

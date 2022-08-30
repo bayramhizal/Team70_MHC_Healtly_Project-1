@@ -1,3 +1,4 @@
+@Regression @E2E
 Feature:US_016 TC11 Database Testi
 
   @db16

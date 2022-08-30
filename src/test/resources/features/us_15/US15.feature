@@ -1,9 +1,10 @@
-
+@Regression
 Feature: Admin tarafindan hasta olusturma ve duzenleme
 
   Background: Siteye gidis
     Given kullanici ana sayfaya gider
 
+@Smoke @E2E
   Scenario: Yeni hastalar Yonetici tarafindan olusturulabilir
 
     Given kullanici sisteme "adminn" olarak giris yapar
@@ -26,7 +27,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
        | personell |
        | hastaa |
 
-
+  @Smoke
   Scenario: Yonetici Ssn,Firstname,Lastname gibi tum hasta bilgilerini gorebilir
 
     Given kullanici sisteme "adminn" olarak giris yapar
@@ -49,7 +50,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
     Then kullanici tum basliklarin gorunur ve erisilebilir oldugunu dogrular
 
 
-
+  @Smoke
   Scenario: Hasta olusturuldugunda ogelere data girisi yapabilmeli
     
     Given kullanici sisteme "adminn" olarak giris yapar
@@ -70,6 +71,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
     Then kullanici edit a Patient sayfasinda Save butonuna basar
     Then kullanici A Patient is created yazisinin goruldugunu dogrular
 
+  @Smoke
   Scenario: Hasta guncellendiginde ogelere data girisi yapabilmeli
 
     Given kullanici sisteme "adminn" olarak giris yapar
@@ -90,7 +92,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
     Then kullanici edit a Patient sayfasinda Save butonuna basar
     Then kullanici A Patient is updated yazisinin goruldugunu dogrular
 
-
+  @Smoke
     Scenario: Hastaya doktoru sadece Admin atayabilir
 
       Given kullanici sisteme "adminn" olarak giris yapar
@@ -142,7 +144,7 @@ Feature: Admin tarafindan hasta olusturma ve duzenleme
       Then kullanici A Patient is created yazisinin gorulmedigini dogrular
 
 
-
+  @Smoke @E2E
      Scenario: Yonetici herhangi bir hastayi silebilir
 
        Given kullanici sisteme "adminn" olarak giris yapar
