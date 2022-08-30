@@ -39,7 +39,7 @@ public class Us_016_Db_StepDefinitions {
         System.out.println(idList);
       int count = 0;
       for (Object id : idList) {
-          if (id != "237197") {
+          if (id != "249739") {
               count++;
 
           }
@@ -51,7 +51,7 @@ public class Us_016_Db_StepDefinitions {
       // List<List<Object>> data = getQueryResultList(query);
       // System.out.println("aga bu ne :" + data);
       // List<String> expectedData = new ArrayList<>();
-
+        closeConnection();
     }
 
 
