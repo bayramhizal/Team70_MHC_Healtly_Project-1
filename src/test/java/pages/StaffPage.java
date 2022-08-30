@@ -99,17 +99,17 @@ public class StaffPage {
 
 
 
+    @FindBy(xpath = "(//span[text()='Show Tests'])[1]")
+    public WebElement showTestsButton;
 
+    @FindBy(xpath = "(//span[text()='View Results'])[1]")
+    public WebElement viewTestResultsButton;
 
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
+    public WebElement patientEditButton;
 
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//span[text()='Create or edit a Patient'])[1]")
+    public WebElement EditSayfasiKontrol;
 
 
 

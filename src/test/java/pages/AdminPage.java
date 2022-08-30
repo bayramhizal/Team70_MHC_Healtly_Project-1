@@ -323,19 +323,35 @@ public WebElement deleteHasta;
 
 
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
+    public WebElement PhysicianDropdownButton;
 
 
+    @FindBy(xpath = "//span[text()='Physicians']")
+    public WebElement PhysicianPageVisible;
 
 
+    @FindBy(xpath = "(//span[text()='View'])[1]")
+    public WebElement PhysicianPageViewButton;
 
 
+    @FindBy(xpath = "(//span[text()='Edit'])[1]")
+    public WebElement PhysicianPageEditButton;
 
 
+    @FindBy(xpath = "(//span[text()='Create or edit a Physician'])[1]")
+    public WebElement PhysicianEditPageVisible;
 
 
+    @FindBy(id = "file_image")
+    public WebElement imageButton;
 
+    @FindBy(xpath = "//input[@name='examFee']")
+    public WebElement examFeeBox;
 
 
+    @FindBy(xpath = "(//span[text()='Delete'])[1]")
+    public WebElement PhysicianPageDeleteButton;
 
 
 
@@ -381,25 +397,7 @@ public WebElement deleteHasta;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Kadir 400-450
+    //Kadir 400-450
     @FindBy(xpath = "(//a[@href=\"/c-message\"])[2]")
     public WebElement messageButton;
 
