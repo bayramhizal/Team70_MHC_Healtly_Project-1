@@ -9,6 +9,7 @@ public class us22 {
 
     StaffPage staffPage = new StaffPage();
 
+
     @Then("Kullanici show tests butonuna tiklar")
     public void kullanici_show_tests_butonuna_tiklar() throws InterruptedException {
         Thread.sleep(2000);
