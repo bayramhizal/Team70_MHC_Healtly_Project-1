@@ -1,5 +1,5 @@
 
-
+@Regression @E2E
 Feature: Admin olarak;Yeni Staff (Personel) Olusturma / Guncelleme / Goruntuleme ve Silme
 
 

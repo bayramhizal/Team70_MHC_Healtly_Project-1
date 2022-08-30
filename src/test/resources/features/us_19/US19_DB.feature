@@ -1,5 +1,5 @@
 
-
+@Regression @E2E
 Feature: Admin tarafindan silinen Staff kayitlarini DB  ile dogrulama
 
   Scenario Outline: DB ile dogrulama

@@ -1,3 +1,4 @@
+@Regression
 Feature: US27 Messages by Admin Validate with API and DB
 
  #  Scenario: TC01 Admin, mesaj portalına gidebilir ve tüm mesajları, yazarlarını ve e-postalarını görüntüleyebilir.
@@ -8,6 +9,7 @@ Feature: US27 Messages by Admin Validate with API and DB
  #   And Kullanıcı sayfanın altındakı messages butonuna tıklar
  #   And Kullanıcı mesajlar sayfasının goruntulendıgını kontrol eder
  #
+  @E2E
   Scenario: TC02 Admin, mesajları oluşturabilir, güncelleyebilir, silebilir
 
     Given kullanici Medunna adresine gider

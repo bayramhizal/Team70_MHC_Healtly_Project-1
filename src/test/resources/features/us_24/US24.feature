@@ -1,4 +1,4 @@
-@US24
+@US24 @Regression
   Feature: My Appointment by patient
     Background:User goings to their account
       Given user goes to medunna home page
@@ -9,11 +9,13 @@
       And user clicks the MY PAGES button
       Then user clicks the My Appointments button
 
+    @Smoke
     Scenario: user sees their examination results
         Given user clicks the Shows Test button
         And user clicks the View Results button
         Then user verify test results
-    @US024_TC002
+
+    @US024_TC002 @Smoke
     Scenario: user sees their invoice
        When user clicks the Show Invoice Button
        Then user verifies their Invoice

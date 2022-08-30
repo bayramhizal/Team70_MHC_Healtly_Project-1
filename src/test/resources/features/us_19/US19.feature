@@ -1,5 +1,4 @@
-
-
+@Regression
 Feature: US19 Admin olarak;Yeni Staff (Personel) Oluşturma / Güncelleme / Görüntüleme ve Silme
 
   Background:Tekrar eden methodlar
@@ -10,8 +9,7 @@ Feature: US19 Admin olarak;Yeni Staff (Personel) Oluşturma / Güncelleme / Gör
     And Kullanici Item and Titles den "Staff" secimi yapar
 
 
-
-@arif1
+  @arif1 @Smoke @E2E
   Scenario: TC01 Admin SSN kullanarak; kayıtlı kişiler arasında Staff arayabilir ve tumbilgileri dogrular.
 
 
@@ -22,14 +20,14 @@ Feature: US19 Admin olarak;Yeni Staff (Personel) Oluşturma / Güncelleme / Gör
     And Kullanici girmis oldugu SSN bilgisine gore "Staff" bilgilerini dogrular
 
 
-
+  @Smoke
   Scenario: TC02 Admin kayitli kisilerden bir kullanici secebilir
 
 
     And Kullanici acilan sayfada herhangi bir kullaniciyi goruntuler
     And Kullanici acilan sayfanin "Staff" sayfasi oldugunu gorur
 
-
+  @E2E
   Scenario: TC03 Admin kayıtlı kisilerden bir kullanıcı bilgilerini duzenleyebilir.
 
 
@@ -37,7 +35,7 @@ Feature: US19 Admin olarak;Yeni Staff (Personel) Oluşturma / Güncelleme / Gör
     And Kullanici Staff bilgilerini gunceller ve "Save" tusuna basar
     And Acilan pencerede "A Staff is updated with identifier" uyarisini gorur
 
-
+  @Smoke @E2E
   Scenario: TC04 Admin kullanıcı bilgilerini silebilir.
 
     And Kullanici acilan sayfada herhangi bir kullanici icin delete butonuna basar

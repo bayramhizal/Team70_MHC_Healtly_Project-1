@@ -1,6 +1,6 @@
 # US027_DB
 #Kullanıcı DB ile mesajları doğrulamalıdır
-@US027_DB
+@US027_DB @Regression @E2E
 Feature:US027 Messages by Admin Validate with API and DB
 
   @US027_TC007

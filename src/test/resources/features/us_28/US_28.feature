@@ -1,3 +1,4 @@
+@Regression
 Feature: Kullanici ulke olusturabilmeli ve bunu API ile dogrulayabilmeli
 
   Background: Kullanici sayfasina giris

@@ -1,3 +1,4 @@
+@Regression @E2E
 Feature:test api
 
 

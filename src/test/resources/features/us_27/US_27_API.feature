@@ -1,5 +1,5 @@
 
-
+@Regression @E2E
 Feature: US27 Messages by Admin Validate with API and DB
 
   Scenario: TC05 Kullanici, API kullanarak ileti olusturmayi dogrulamalidir
