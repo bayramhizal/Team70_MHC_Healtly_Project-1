@@ -53,10 +53,10 @@ public class RoomSteps {
     public void kullanici_roomlar_icin_put_request_yapar() {
         roomPut.setId(180673);
         roomPut.setRoomType("DELUXE");
-        roomPut.setRoomNumber(73466237);
-        roomPut.setDescription("Techproed innovation");
+        roomPut.setRoomNumber(73465673);
+        roomPut.setDescription("Techproed innovation3");
         roomPut.setStatus(true);
-        roomPut.setPrice(1000);
+        roomPut.setPrice(1001);
         response = given().headers(
                 "Authorization",
                 "Bearer " + generateToken("DzKKaya","Sword1234."),
@@ -78,7 +78,7 @@ public class RoomSteps {
     @Then("kullanici post request validation yapar")
     public void kullanici_post_request_validation_yapar() throws Exception {
         //1. validation
-        response.then().assertThat().statusCode(201);
+        response.then().assertThat().statusCode(200);
         response.then().assertThat().
                 body("price", equalTo(700)).
                 body("roomNumber",equalTo(34736) )

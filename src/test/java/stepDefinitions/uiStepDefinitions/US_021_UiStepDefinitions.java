@@ -174,9 +174,10 @@ public class US_021_UiStepDefinitions {
 
     @And("Start yil ve End yil {string}den buyuk olmamali")
     public void startYilVeEndYilDenBuyukOlmamali(String yil) {
-       staffPage.startDate.getAttribute("value").substring(0,5);
-       int expectedResult=2022;
-       int actualResult= Integer.parseInt(staffPage.startDate.getAttribute("value").substring(0,5));
+        System.out.println(staffPage.startDate.getAttribute("value").substring(0, 4));
+        int expectedResult=2022;
+       int actualResult= Integer.parseInt(staffPage.startDate.getAttribute("value").substring(0,4));
+        System.out.println("actual result :" + actualResult);
        Assert.assertTrue((expectedResult==actualResult)||(expectedResult>actualResult));
 
 
