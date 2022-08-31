@@ -1,4 +1,4 @@
-@E2E
+
 Feature: US09 US09 Staff hasta bilgilerini gorebilmeli, duzenleyebilmeli ve silebilmelidir
 
   Scenario: Kullanicinin DB'den gelen tum hasta bilgilerini dogrulamalidir

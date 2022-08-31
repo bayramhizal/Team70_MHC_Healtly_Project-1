@@ -1,5 +1,5 @@
 
-@Smoke_Test
+
 Feature: Get Cucumber Projesi
 
   Scenario: US08_TC01 "New password confirmation" onaylanabilmeli

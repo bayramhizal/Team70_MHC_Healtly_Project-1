@@ -1,4 +1,4 @@
-@E2E
+
 Feature: US09 Staff hasta bilgilerini gorebilmeli, duzenleyebilmeli ve silebilmelidir
   @arif
   Scenario: TC01 Kullanici "My Pages" sekmesinden hasta bilgilerini gorebilmelidir.

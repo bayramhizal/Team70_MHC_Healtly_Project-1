@@ -1,5 +1,5 @@
 
-@Smoke_Test
+
 Feature: User Story_003 Registration sayfasında güçlü şifre girilmeli ve "Password strength" seviyeleri görülebilmelidir.
 
   Scenario: TC01 Girilen farkli password karakter turlerine gore; "Password Strength" seviyesindeki degisimler gorulmelidir

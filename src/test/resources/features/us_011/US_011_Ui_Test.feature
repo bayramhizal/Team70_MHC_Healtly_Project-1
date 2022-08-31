@@ -1,4 +1,4 @@
-@Smoke_Test
+
 Feature:US011 "My Appointments" Physician (Doctor) tarafından düzenlenebilmeli
 
 
