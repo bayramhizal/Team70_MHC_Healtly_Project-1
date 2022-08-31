@@ -1,4 +1,4 @@
-@Smoke_Test
+
 Feature: US13 TC0001
 
   Background: Doktor Appontments sayfasina gelir

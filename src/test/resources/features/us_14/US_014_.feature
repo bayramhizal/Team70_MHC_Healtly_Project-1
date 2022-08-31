@@ -1,5 +1,5 @@
 
-@Smoke_Test
+
 Feature: US14 Physician (Doctor) "Edit Inpatient" (Yatılı Tedavi) işlemleri yapabilmeli
   (My Appointments / View / Edit Impatients)
 

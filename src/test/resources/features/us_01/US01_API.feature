@@ -1,5 +1,5 @@
 
-@E2E
+
 Feature: Kayit olmak için SSN, Firstname ve Lastname bilgileri girilebilmelidir.
 
 

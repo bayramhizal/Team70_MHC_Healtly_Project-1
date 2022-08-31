@@ -1,4 +1,4 @@
-@Smoke_Test
+
 Feature: US_04 Giris sayfasi yalnizca gecerli kimlik bilgileriyle erisilebilir olmalidir.
 
   Background:Tekrar eden methodlar
