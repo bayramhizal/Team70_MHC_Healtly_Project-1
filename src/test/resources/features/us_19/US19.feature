@@ -1,4 +1,4 @@
-@Regression
+
 Feature: US19 Admin olarak;Yeni Staff (Personel) Oluşturma / Güncelleme / Görüntüleme ve Silme
 
   Background:Tekrar eden methodlar

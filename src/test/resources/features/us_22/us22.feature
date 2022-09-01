@@ -1,6 +1,6 @@
-@US22_TC01 @Regression
+@US22_TC01
 Feature: US22_TC01
-
+  @Regression
   Scenario: US22_TC01 Kullanici (Staff) hastanin SSN id ile arama yapabilir.
 
     Given kullanici "medunnaUrl" e gider.
@@ -21,7 +21,7 @@ Feature: US22_TC01
     And Kullanici show tests butonuna tiklar
     Then kullanici gelen sayfada view results butonuna tiklar
 
-  @Smoke
+  @Smoke @Regression
   Scenario: US22_TC03 Kullanici (Staff) "ID, Date, Result, description, Created date, ..." gibi sonuc bilgileini gorebilmeli ve
   guncelleyebilmelidir.
 

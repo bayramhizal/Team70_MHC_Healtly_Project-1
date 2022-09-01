@@ -1,4 +1,4 @@
-@Regression
+
 Feature: Admin tarafindan hasta olusturma ve duzenleme
 
   Background: Siteye gidis

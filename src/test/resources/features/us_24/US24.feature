@@ -1,4 +1,4 @@
-@US24 @Regression
+@US24
   Feature: My Appointment by patient
     Background:User goings to their account
       Given user goes to medunna home page

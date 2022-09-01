@@ -1,4 +1,4 @@
-@Regression
+
 Feature: US27 Messages by Admin Validate with API and DB
 
  #  Scenario: TC01 Admin, mesaj portalına gidebilir ve tüm mesajları, yazarlarını ve e-postalarını görüntüleyebilir.

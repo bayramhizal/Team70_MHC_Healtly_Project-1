@@ -1,4 +1,4 @@
-@Regression
+
 Feature: Countries testAPI
 
 
