@@ -1,4 +1,4 @@
-@wip @Regression
+@wip
 Feature:US_016 Oda Olusturma / Goruntuleme / Guncelleme /Silme (Admin)
 
   Background:US_016 Tekrar eden methodlar

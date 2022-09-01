@@ -1,4 +1,4 @@
-@Regression
+
 Feature: US26 İletişim Mesajı (Contact messages)
 
   Scenario: TC01 Herhangi bir kullanıcı bilgi almak için "Contact portal" üzerinden istek gönderebilmeli
